@@ -1,0 +1,134 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/StartMenu.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/button_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Themes/button_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://Themes/button_pressed.tres" type="StyleBox" id=5]
+[ext_resource path="res://Fonts/label_font.tres" type="DynamicFont" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="StartMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo_label" type="Label" parent="."]
+anchor_top = 0.176
+anchor_right = 1.0
+anchor_bottom = 0.254
+margin_top = -167.52
+margin_bottom = -168.08
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
+text = "TowerVerse"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_container" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -159.0
+margin_top = -226.5
+margin_right = 159.0
+margin_bottom = 226.5
+custom_constants/separation = 60
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play_button" type="Button" parent="button_container"]
+margin_right = 318.0
+margin_bottom = 111.0
+focus_mode = 0
+size_flags_horizontal = 5
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
+custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+enabled_focus_mode = 0
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="options_button" type="Button" parent="button_container"]
+margin_top = 171.0
+margin_right = 318.0
+margin_bottom = 282.0
+focus_mode = 0
+size_flags_horizontal = 5
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
+custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+enabled_focus_mode = 0
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about_button" type="Button" parent="button_container"]
+margin_top = 342.0
+margin_right = 318.0
+margin_bottom = 453.0
+focus_mode = 0
+size_flags_horizontal = 5
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
+custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+enabled_focus_mode = 0
+text = "About"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="version_container" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -51.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="version_label" type="Label" parent="version_container"]
+margin_left = 328.0
+margin_right = 392.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
+text = "0.1"
+align = 1
+valign = 1
+
+[node name="tween" type="Tween" parent="."]
+
+[connection signal="pressed" from="button_container/play_button" to="." method="_on_play_button_pressed"]
