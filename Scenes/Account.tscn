@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Account.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Themes/button_pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://Fonts/button_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Fonts/lineedit_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Fonts/label_font.tres" type="DynamicFont" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 85
@@ -73,6 +74,7 @@ __meta__ = {
 [node name="tween" type="Tween" parent="."]
 
 [node name="account_buttons_container" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -141,24 +143,36 @@ __meta__ = {
 }
 
 [node name="register_container" type="VBoxContainer" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -340.0
-margin_top = -165.5
+margin_top = -291.0
 margin_right = 340.0
-margin_bottom = 165.5
+margin_bottom = 291.0
 custom_constants/separation = 50
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="register_username_container" type="HBoxContainer" parent="register_container"]
+[node name="register_error_label" type="Label" parent="register_container"]
 margin_right = 680.0
-margin_bottom = 77.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 7 )
+align = 1
+valign = 1
+autowrap = true
+max_lines_visible = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="register_username_container" type="HBoxContainer" parent="register_container"]
+margin_top = 101.0
+margin_right = 680.0
+margin_bottom = 178.0
 
 [node name="register_username_label" type="Label" parent="register_container/register_username_container"]
 margin_top = 4.0
@@ -189,9 +203,9 @@ max_length = 20
 context_menu_enabled = false
 
 [node name="register_email_container" type="HBoxContainer" parent="register_container"]
-margin_top = 127.0
+margin_top = 228.0
 margin_right = 680.0
-margin_bottom = 204.0
+margin_bottom = 305.0
 
 [node name="register_email_label" type="Label" parent="register_container/register_email_container"]
 margin_top = 4.0
@@ -222,9 +236,9 @@ max_length = 60
 context_menu_enabled = false
 
 [node name="register_password_container" type="HBoxContainer" parent="register_container"]
-margin_top = 254.0
+margin_top = 355.0
 margin_right = 680.0
-margin_bottom = 331.0
+margin_bottom = 432.0
 
 [node name="register_password_label" type="Label" parent="register_container/register_password_container"]
 margin_top = 4.0
@@ -257,9 +271,9 @@ context_menu_enabled = false
 
 [node name="register_button" type="Button" parent="register_container"]
 margin_left = 84.0
-margin_top = 381.0
+margin_top = 482.0
 margin_right = 595.0
-margin_bottom = 481.0
+margin_bottom = 582.0
 focus_mode = 0
 size_flags_horizontal = 4
 custom_styles/hover = ExtResource( 4 )
@@ -283,18 +297,31 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -340.0
-margin_top = -177.0
+margin_top = -227.5
 margin_right = 340.0
-margin_bottom = 177.0
+margin_bottom = 227.5
 custom_constants/separation = 50
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="login_email_container" type="HBoxContainer" parent="login_container"]
+[node name="login_error_label" type="Label" parent="login_container"]
 margin_right = 680.0
-margin_bottom = 77.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 7 )
+align = 1
+valign = 1
+autowrap = true
+max_lines_visible = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="login_email_container" type="HBoxContainer" parent="login_container"]
+margin_top = 101.0
+margin_right = 680.0
+margin_bottom = 178.0
 
 [node name="login_email_label" type="Label" parent="login_container/login_email_container"]
 margin_top = 4.0
@@ -325,9 +352,9 @@ max_length = 60
 context_menu_enabled = false
 
 [node name="login_password_container" type="HBoxContainer" parent="login_container"]
-margin_top = 127.0
+margin_top = 228.0
 margin_right = 680.0
-margin_bottom = 204.0
+margin_bottom = 305.0
 
 [node name="login_password_label" type="Label" parent="login_container/login_password_container"]
 margin_top = 4.0
@@ -360,9 +387,9 @@ context_menu_enabled = false
 
 [node name="login_button" type="Button" parent="login_container"]
 margin_left = 60.0
-margin_top = 254.0
+margin_top = 355.0
 margin_right = 619.0
-margin_bottom = 354.0
+margin_bottom = 455.0
 focus_mode = 0
 size_flags_horizontal = 4
 custom_styles/hover = ExtResource( 4 )
