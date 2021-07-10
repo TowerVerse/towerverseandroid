@@ -125,22 +125,23 @@ func show_response_error(dict: Dictionary) -> void:
 	
 		var register_error_text = ''
 	
-		match dict['data']['errorMessage']:
+		match dict["event"]:
 			'createTravellerNameExceedsLimit':
-				register_error_text = Templates.exceeds_length.format(['Username', '3', '20'])
+				register_error_text = Templates.exceeds_length % ['Username', '3', '20']
 				
 			'createTravellerEmailExceedsLimit':
-				register_error_text = Templates.exceeds_length.format(['Email', '10', '60'])
+				register_error_text = Templates.exceeds_length % ['Email', '10', '60']
 			'createTravellerEmailInvalidFormat':
-				register_error_text = dict['data']['errorMessage']
+				register_error_text = dict['event']
 			'createTravellerEmailInUse':
 				register_error_text = Templates.email_in_use
 				
 			'createTravellerPasswordExceedsLimit':
-				register_error_text = Templates.exceeds_length.format(['Password', '10', '50'])
-				
+				register_error_text = Templates.exceeds_length % ['Password', '10', '50']
+			'createTravellerReply':
+				register_error_text = Templates.success_registering
 			_:
-				register_error_text = Templates.unknown_error.format(['registering'])
+				register_error_text = Templates.unknown_error
 				
 		register_error_label.visible = true
 		register_error_label.text = register_error_text
@@ -149,14 +150,14 @@ func show_response_error(dict: Dictionary) -> void:
 		
 		var login_error_text = ''
 		
-		match dict['data']['errorMessage']:
+		match dict["event"]:
 			'loginTravellerEmailExceedsLimit':
-				login_error_text = Templates.exceeds_length.format(['Email', '10', '60'])
+				login_error_text = Templates.exceeds_length % ['Email', '10', '60']
 			'loginTravellerEmailInvalidFormat':
-				login_error_text = dict['data']['errorMessage']
+				login_error_text = dict['event']
 			
 			'loginTravellerPasswordExceedsLimit':
-				login_error_text = Templates.exceeds_length.format(['Password', '10', '50'])
+				login_error_text = Templates.exceeds_length % ['Password', '10', '50']
 		
 			'loginTravellerNotFound':
 				login_error_text = 'The traveller could not be found.'
@@ -166,7 +167,8 @@ func show_response_error(dict: Dictionary) -> void:
 				
 			'loginTravellerInvalidPassword':
 				login_error_text = 'The password is invalid.'
-				
+			'loginTravellerReply':
+				login_error_text = Templates.success_logging
 			_:
 				login_error_text = Templates.unknown_error
 		
