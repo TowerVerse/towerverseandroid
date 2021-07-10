@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Scripts/Account.gd" type="Script" id=2]
-[ext_resource path="res://Themes/button_normal.tres" type="StyleBox" id=3]
-[ext_resource path="res://Themes/button_pressed.tres" type="StyleBox" id=4]
-[ext_resource path="res://Fonts/button_font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Fonts/lineedit_font.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Fonts/label_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Scripts/StartMenu/Account.gd" type="Script" id=2]
+[ext_resource path="res://assets/Themes/button_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/Themes/button_pressed.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/Fonts/button_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/Fonts/lineedit_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/Fonts/label_font.tres" type="DynamicFont" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 85

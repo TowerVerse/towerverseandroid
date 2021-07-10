@@ -34,7 +34,7 @@ func _input(event: InputEvent) -> void:
 			return
 		
 		if not has_selected:
-			get_tree().change_scene("res://Scenes/StartMenu.tscn")
+			get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 		has_selected = false
 		fade_in_buttons_and_fade_out_ui()
 	
@@ -44,7 +44,7 @@ func _notification(what: int) -> void:
 			return
 			
 		if not has_selected:
-			get_tree().change_scene("res://Scenes/StartMenu.tscn")
+			get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 		has_selected = false
 		fade_in_buttons_and_fade_out_ui()
 	
@@ -201,7 +201,7 @@ func _on_register_button_pressed() -> void:
 	match result_response['event']:
 		result_response_reply:
 			Utils.save_credentials(email, password)
-			get_tree().change_scene("res://Scenes/StartMenu.tscn")
+			get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 		_:
 			error_text = result_response
 
@@ -226,7 +226,7 @@ func _on_login_button_pressed() -> void:
 	match result_response['event']:
 		result_response_reply:
 			Utils.save_credentials(email, password)
-			get_tree().change_scene("res://Scenes/StartMenu.tscn")
+			get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 		_:
 			error_text = result_response
 		
