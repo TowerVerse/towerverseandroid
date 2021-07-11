@@ -132,7 +132,7 @@ func show_response_error(dict: Dictionary) -> void:
 			'createTravellerEmailExceedsLimit':
 				register_error_text = Templates.exceeds_length % ['Email', '10', '60']
 			'createTravellerEmailInvalidFormat':
-				register_error_text = dict['event']
+				register_error_text = dict['data']['errorMessage']
 			'createTravellerEmailInUse':
 				register_error_text = Templates.email_in_use
 				
