@@ -26,3 +26,12 @@ func get_item_index(data: Dictionary, key):
 func save_credentials(travellerEmail: String, travellerPassword: String):
 	Save.add_value('travellerEmail', travellerEmail)
 	Save.add_value('travellerPassword', travellerPassword)
+
+func find_not_in_and_remove(target: String, allowed_chars: String) -> String:
+	var temp_str = target
+	
+	for letter in target:
+		if not letter in allowed_chars:
+			temp_str = temp_str.replace(letter, '')
+
+	return temp_str

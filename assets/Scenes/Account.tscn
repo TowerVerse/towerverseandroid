@@ -400,5 +400,13 @@ __meta__ = {
 
 [connection signal="pressed" from="account_buttons_container/acc_register_button" to="." method="_on_acc_register_button_pressed"]
 [connection signal="pressed" from="account_buttons_container/acc_login_button" to="." method="_on_acc_login_button_pressed"]
+[connection signal="text_changed" from="register_container/register_username_container/register_username" to="." method="_on_register_username_text_changed"]
+[connection signal="text_entered" from="register_container/register_username_container/register_username" to="." method="_on_register_username_text_entered"]
+[connection signal="text_changed" from="register_container/register_email_container/register_email" to="." method="_on_register_email_text_changed"]
+[connection signal="text_entered" from="register_container/register_email_container/register_email" to="." method="_on_register_email_text_entered"]
+[connection signal="text_entered" from="register_container/register_password_container/register_password" to="." method="_on_register_password_text_entered"]
 [connection signal="pressed" from="register_container/register_button" to="." method="_on_register_button_pressed"]
+[connection signal="text_changed" from="login_container/login_email_container/login_email" to="." method="_on_login_email_text_changed"]
+[connection signal="text_entered" from="login_container/login_email_container/login_email" to="." method="_on_login_email_text_entered"]
+[connection signal="text_entered" from="login_container/login_password_container/login_password" to="." method="_on_login_password_text_entered"]
 [connection signal="pressed" from="login_container/login_button" to="." method="_on_login_button_pressed"]

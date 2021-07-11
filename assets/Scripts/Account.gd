@@ -232,3 +232,33 @@ func _on_login_button_pressed() -> void:
 			get_tree().change_scene("res://assets/Scenes/OnlineMenu.tscn")
 		_:
 			show_response_error(result_response)
+
+func _on_register_username_text_changed(new_text):
+	var prev_caret_pos = register_username.caret_position
+	register_username.text = Utils.find_not_in_and_remove(new_text, Variables.username_characters)
+	register_username.caret_position = prev_caret_pos
+
+func _on_register_username_text_entered(new_text):
+	register_email.grab_focus()
+
+func _on_register_email_text_changed(new_text):
+	var prev_caret_pos = register_email.caret_position
+	register_email.text = Utils.find_not_in_and_remove(new_text, Variables.email_characters)
+	register_email.caret_position = prev_caret_pos
+
+func _on_register_email_text_entered(new_text):
+	register_password.grab_focus()
+
+func _on_register_password_text_entered(new_text):
+	register_button.emit_signal("pressed")
+
+func _on_login_email_text_changed(new_text):
+	var prev_caret_pos = login_email.caret_position
+	login_email.text = Utils.find_not_in_and_remove(new_text, Variables.email_characters)
+	login_email.caret_position = prev_caret_pos
+
+func _on_login_email_text_entered(new_text):
+	login_password.grab_focus()
+
+func _on_login_password_text_entered(new_text):
+	login_button.emit_signal("pressed")
