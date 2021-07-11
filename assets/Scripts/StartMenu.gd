@@ -13,6 +13,9 @@ func _notification(what: int) -> void:
 		get_tree().quit()
 
 func _on_play_button_pressed() -> void:
+	if not Socket.is_connected:
+		return
+	
 	var email = Save.get_value('travellerEmail')
 	var password = Save.get_value('travellerPassword')
 	
