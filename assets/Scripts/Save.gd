@@ -64,6 +64,8 @@ func get_value(key: String):
 func get_file_dict() -> Dictionary:
 	check_file()
 	
-	file.open(Variables.SAVE_FILENAME, File.READ_WRITE)
+	var temp_file = File.new()
 	
-	return JSON.parse(file.get_as_text()).result
+	temp_file.open(Variables.SAVE_FILENAME, File.READ_WRITE)
+	
+	return JSON.parse(temp_file.get_as_text()).result

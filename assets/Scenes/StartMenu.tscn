@@ -53,7 +53,6 @@ __meta__ = {
 [node name="play_button" type="Button" parent="button_container"]
 margin_right = 318.0
 margin_bottom = 111.0
-focus_mode = 0
 size_flags_horizontal = 5
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
@@ -63,7 +62,6 @@ custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
 custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-enabled_focus_mode = 0
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -73,7 +71,6 @@ __meta__ = {
 margin_top = 171.0
 margin_right = 318.0
 margin_bottom = 282.0
-focus_mode = 0
 size_flags_horizontal = 5
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
@@ -83,7 +80,6 @@ custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
 custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-enabled_focus_mode = 0
 text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -93,7 +89,6 @@ __meta__ = {
 margin_top = 342.0
 margin_right = 318.0
 margin_bottom = 453.0
-focus_mode = 0
 size_flags_horizontal = 5
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
@@ -103,7 +98,6 @@ custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
 custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-enabled_focus_mode = 0
 text = "About"
 __meta__ = {
 "_edit_use_anchors_": false
