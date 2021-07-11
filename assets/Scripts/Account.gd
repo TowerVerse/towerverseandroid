@@ -34,7 +34,7 @@ func _input(event: InputEvent) -> void:
 			return
 		
 		if not has_selected:
-			get_tree().change_scene("res://Scenes/StartMenu.tscn")
+			get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 		has_selected = false
 		fade_in_buttons_and_fade_out_ui()
 	
@@ -44,7 +44,7 @@ func _notification(what: int) -> void:
 			return
 			
 		if not has_selected:
-			get_tree().change_scene("res://Scenes/StartMenu.tscn")
+			get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 		has_selected = false
 		fade_in_buttons_and_fade_out_ui()
 	
@@ -125,22 +125,22 @@ func show_response_error(dict: Dictionary) -> void:
 	
 		var register_error_text = ''
 	
-		match dict['data']['errorMessage']:
+		match dict["event"]:
 			'createTravellerNameExceedsLimit':
-				register_error_text = Templates.exceeds_length.format(['Username', '3', '20'])
+				register_error_text = Templates.exceeds_length % ['Username', '3', '20']
 				
 			'createTravellerEmailExceedsLimit':
-				register_error_text = Templates.exceeds_length.format(['Email', '10', '60'])
+				register_error_text = Templates.exceeds_length % ['Email', '10', '60']
 			'createTravellerEmailInvalidFormat':
-				register_error_text = dict['data']['errorMessage']
+				register_error_text = dict['event']
 			'createTravellerEmailInUse':
 				register_error_text = Templates.email_in_use
 				
 			'createTravellerPasswordExceedsLimit':
-				register_error_text = Templates.exceeds_length.format(['Password', '10', '50'])
+				register_error_text = Templates.exceeds_length % ['Password', '10', '50']
 				
 			_:
-				register_error_text = Templates.unknown_error.format(['registering'])
+				register_error_text = Templates.unknown_error
 				
 		register_error_label.visible = true
 		register_error_label.text = register_error_text
@@ -149,14 +149,14 @@ func show_response_error(dict: Dictionary) -> void:
 		
 		var login_error_text = ''
 		
-		match dict['data']['errorMessage']:
+		match dict["event"]:
 			'loginTravellerEmailExceedsLimit':
-				login_error_text = Templates.exceeds_length.format(['Email', '10', '60'])
+				login_error_text = Templates.exceeds_length % ['Email', '10', '60']
 			'loginTravellerEmailInvalidFormat':
 				login_error_text = dict['data']['errorMessage']
 			
 			'loginTravellerPasswordExceedsLimit':
-				login_error_text = Templates.exceeds_length.format(['Password', '10', '50'])
+				login_error_text = Templates.exceeds_length % ['Password', '10', '50']
 		
 			'loginTravellerNotFound':
 				login_error_text = 'The traveller could not be found.'
@@ -166,9 +166,9 @@ func show_response_error(dict: Dictionary) -> void:
 				
 			'loginTravellerInvalidPassword':
 				login_error_text = 'The password is invalid.'
-				
+
 			_:
-				login_error_text = Templates.unknown_error
+				login_error_text = Templates.unknown_error % ['logging in']
 		
 		login_error_label.visible = true
 		login_error_label.text = login_error_text
@@ -188,6 +188,11 @@ func _on_register_button_pressed() -> void:
 	var email = register_email.text
 	var password = register_password.text
 	var error_text = ''
+	
+	if username.empty() || email.empty() || password.empty():
+		register_error_label.visible = true
+		register_error_label.text = 'Username, email and password mustn\'t be empty.'
+		return
 
 	Socket.send_packet('createTraveller', {
 							'travellerName': username,
@@ -196,24 +201,23 @@ func _on_register_button_pressed() -> void:
 	})
 	
 	var result_response = yield(Socket, 'packet_fetched')
-	var result_response_reply = 'createTravellerReply'
 	
 	match result_response['event']:
-		result_response_reply:
+		'createTravellerReply':
 			Utils.save_credentials(email, password)
-			get_tree().change_scene("res://Scenes/StartMenu.tscn")
+			get_tree().change_scene("res://assets/Scenes/OnlineMenu.tscn")
 		_:
-			error_text = result_response
-
-	if error_text:
-		show_response_error(error_text)
-		
-	error_text = ''
+			show_response_error(result_response)
 
 func _on_login_button_pressed() -> void:
 	var email = login_email.text
 	var password = login_password.text
 	var error_text = ''
+	
+	if email.empty() || password.empty():
+		login_error_label.visible = true
+		login_error_label.text = 'Email and password mustn\'t be empty.'
+		return
 	
 	Socket.send_packet('loginTraveller', {
 							'travellerEmail': email,
@@ -221,16 +225,10 @@ func _on_login_button_pressed() -> void:
 	})
 	
 	var result_response = yield(Socket, 'packet_fetched')
-	var result_response_reply = 'loginTravellerReply'
 	
 	match result_response['event']:
-		result_response_reply:
+		'loginTravellerReply':
 			Utils.save_credentials(email, password)
-			get_tree().change_scene("res://Scenes/StartMenu.tscn")
+			get_tree().change_scene("res://assets/Scenes/OnlineMenu.tscn")
 		_:
-			error_text = result_response
-		
-	if(error_text):
-		show_response_error(error_text)
-		
-	error_text = ''
+			show_response_error(result_response)

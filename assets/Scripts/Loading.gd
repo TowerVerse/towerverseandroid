@@ -20,14 +20,14 @@ func start_progress():
 	loading_progress.value = 0
 	
 	if not Socket.is_connected:
-		get_tree().change_scene("res://Scenes/StartMenu.tscn")
+		get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 		return
 	
 	process_packets()
 
 func process_packets():
 	if len(Variables.loading_packets) == 0:
-		get_tree().change_scene("res://Scenes/StartMenu.tscn")
+		get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 		return
 		
 	var final_packet = {}
@@ -67,7 +67,7 @@ func process_packets():
 				loading_progress.value += progress_to_add
 			_:
 				Utils.log('Error calling ' + packet['event'] + ': '+ str(result_response))
-				get_tree().change_scene("res://Scenes/StartMenu.tscn")
+				get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 				return
 	
 	loading_progress.value = 100

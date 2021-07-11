@@ -12,7 +12,7 @@ config_version=4
 
 config/name="TowerVerse"
 config/description="The cross platform app of TowerVerse!"
-run/main_scene="res://Scenes/StartMenu.tscn"
+run/main_scene="res://assets/Scenes/StartMenu.tscn"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0.156863, 0.156863, 0.156863, 1 )
@@ -21,12 +21,12 @@ config/quit_on_go_back=false
 
 [autoload]
 
-Uuid="*res://Scripts/UUID.gd"
-Save="*res://Scripts/Save.gd"
-Socket="*res://Scripts/Socket.gd"
-Utils="*res://Scripts/Utils.gd"
-Variables="*res://Scripts/Variables.gd"
-Templates="*res://Scripts/Templates.gd"
+Uuid="*res://assets/Scripts/UUID.gd"
+Save="*res://assets/Scripts/Save.gd"
+Socket="*res://assets/Scripts/Socket.gd"
+Utils="*res://assets/Scripts/Utils.gd"
+Variables="*res://assets/Scripts/Variables.gd"
+Templates="*res://assets/Scripts/Templates.gd"
 
 [debug]
 

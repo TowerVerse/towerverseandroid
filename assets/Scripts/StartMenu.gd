@@ -13,7 +13,7 @@ func _notification(what: int) -> void:
 		get_tree().quit()
 
 func _on_play_button_pressed() -> void:
-	get_tree().change_scene("res://Scenes/Account.tscn")
+	get_tree().change_scene("res://assets/Scenes/Account.tscn")
 
 func fade_in():
 	tween.interpolate_property(start_menu, 'modulate', Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1)

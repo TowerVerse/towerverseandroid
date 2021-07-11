@@ -5,19 +5,19 @@ var file: File
 func _ready() -> void:
 	file = File.new()
 
-	if not file.file_exists(Variables.SAVE_FILENAME):		
+	if not file.file_exists(Variables.SAVE_FILENAME):
 		file.open(Variables.SAVE_FILENAME, File.WRITE)
-		
+
 		file.store_line(JSON.print({}))
-									
+
 		file.close()
 
-func add_value(key: String, value, set: bool = false) -> void:	
+func add_value(key: String, value, set: bool = false) -> void:
 	var file_dict = get_file_dict()
 	
 	if key in file_dict.keys() and not set:
 		return
-	
+
 	file.open(Variables.SAVE_FILENAME, File.WRITE)
 
 	file_dict[key] = value
@@ -33,7 +33,7 @@ func remove_value(key: String) -> void:
 	
 	if not key in file_dict:
 		return
-		
+
 	file.open(Variables.SAVE_FILENAME, File.WRITE)
 	
 	file_dict.erase(key)
