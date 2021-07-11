@@ -60,7 +60,6 @@ func send_packet(event: String, data: Dictionary = {}) -> void:
 	
 	emit_signal('packet_fetched', _fetched_packets[final_packet_ref])
 
-	# No error handling
 	_fetched_packets.erase(final_packet_ref)
 
 func _send_wss_packet(packet: PoolByteArray) -> void:

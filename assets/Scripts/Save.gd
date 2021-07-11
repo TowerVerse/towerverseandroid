@@ -6,7 +6,6 @@ func _ready() -> void:
 	file = File.new()
 
 	if not file.file_exists(Variables.SAVE_FILENAME):
-		# No error handling
 		file.open(Variables.SAVE_FILENAME, File.WRITE)
 
 		file.store_line(JSON.print({}))
@@ -18,7 +17,7 @@ func add_value(key: String, value, set: bool = false) -> void:
 	
 	if key in file_dict.keys() and not set:
 		return
-	# No error handling
+
 	file.open(Variables.SAVE_FILENAME, File.WRITE)
 
 	file_dict[key] = value
@@ -34,7 +33,7 @@ func remove_value(key: String) -> void:
 	
 	if not key in file_dict:
 		return
-	# No error handling
+
 	file.open(Variables.SAVE_FILENAME, File.WRITE)
 	
 	file_dict.erase(key)
@@ -51,7 +50,6 @@ func get_value(key: String):
 	return null
 
 func get_file_dict() -> Dictionary:
-	# No error handling
 	file.open(Variables.SAVE_FILENAME, File.READ_WRITE)
 	
 	return JSON.parse(file.get_as_text()).result

@@ -22,11 +22,11 @@ config/quit_on_go_back=false
 [autoload]
 
 Uuid="*res://assets/Scripts/UUID.gd"
-Save="*res://assets/Scripts/StartMenu/Save.gd"
+Save="*res://assets/Scripts/Save.gd"
 Socket="*res://assets/Scripts/Socket.gd"
 Utils="*res://assets/Scripts/Utils.gd"
 Variables="*res://assets/Scripts/Variables.gd"
-Templates="*res://assets/Scripts/StartMenu/Templates.gd"
+Templates="*res://assets/Scripts/Templates.gd"
 
 [debug]
 
