@@ -23,6 +23,6 @@ func get_item_index(data: Dictionary, key):
 		if data[i] == key:
 			return i
 
-func save_credentials(travellerName: String, travellerPassword: String):
-	Save.add_value('travellerEmail', travellerName)
+func save_credentials(travellerEmail: String, travellerPassword: String):
+	Save.add_value('travellerEmail', travellerEmail)
 	Save.add_value('travellerPassword', travellerPassword)
