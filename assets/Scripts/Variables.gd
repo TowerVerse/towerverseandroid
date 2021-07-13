@@ -14,4 +14,4 @@ var digits = '1234567890'
 
 var username_characters = ascii_letters + digits + '!^*'
 var email_characters = ascii_letters + digits + '@.'
-
+var password_characters = ascii_letters + digits + '`~!@#$%^&*()-_=+[{]}\\|;:\'",<.>/?'
