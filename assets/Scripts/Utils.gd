@@ -7,7 +7,7 @@ func log(text: String) -> void:
 	if Variables.DEBUG:
 		print(text)
 
-func add_loading_packet(event: String, data: Dictionary = {}, loading_text: String = 'Loading...', callback: FuncRef = null, target_args: Array = []):
+func add_loading_packet(event: String, redirect: String, data: Dictionary = {}, loading_text: String = 'Loading...', callback: FuncRef = null, target_args: Array = []):
 	var final_packet = {}
 	
 	for key in data.keys():
@@ -21,7 +21,7 @@ func add_loading_packet(event: String, data: Dictionary = {}, loading_text: Stri
 		final_packet['callback'] = callback
 	
 	Variables.loading_packets[len(Variables.loading_packets)] = final_packet
-
+	Variables.loading_redirect = redirect
 
 func save_credentials(travellerEmail: String, travellerPassword: String):
 	Save.add_value('travellerEmail', travellerEmail)

@@ -78,3 +78,5 @@ func process_packets():
 	loading_label.text = 'Finished.'
 	
 	Variables.loading_packets = {}
+	
+	get_tree().change_scene(Variables.loading_redirect)

@@ -29,7 +29,7 @@ func _on_play_button_pressed() -> void:
 		if not Socket.is_connected:
 			return
 			
-		Utils.add_loading_packet('loginTraveller', {'travellerEmail': email,
+		Utils.add_loading_packet('loginTraveller', 'res://assets/Scenes/OnlineMenu.tscn', {'travellerEmail': email,
 													'travellerPassword': password},
 								'Logging in...')
 													

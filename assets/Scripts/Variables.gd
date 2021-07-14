@@ -8,6 +8,7 @@ const SAVE_FILENAME = 'user://towerverse.bin'
 var SAVE_PASSWORD = OS.get_unique_id()
 
 var loading_packets: Dictionary = {}
+var loading_redirect: String = ''
 
 var ascii_letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 var digits = '1234567890'
