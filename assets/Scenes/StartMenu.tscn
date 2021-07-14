@@ -117,12 +117,12 @@ __meta__ = {
 }
 
 [node name="version_label" type="Label" parent="version_container"]
-margin_left = 328.0
-margin_right = 392.0
+margin_left = 303.0
+margin_right = 417.0
 margin_bottom = 51.0
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
-text = "0.1"
+text = "0.2a1"
 align = 1
 valign = 1
 

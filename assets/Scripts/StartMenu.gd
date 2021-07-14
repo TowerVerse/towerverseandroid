@@ -2,6 +2,7 @@ extends Control
 
 onready var tween = get_node('tween')
 onready var start_menu = get_node('.')
+onready var version_label = get_node('version_container/version_label')
 
 func _ready() -> void:
 	Utils.log('StartMenu started.')
@@ -13,6 +14,8 @@ func _notification(what: int) -> void:
 		get_tree().quit()
 
 func fade_in():
+	version_label.text = Variables.APP_VERSION
+	
 	tween.interpolate_property(start_menu, 'modulate', Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1)
 	tween.start()
 

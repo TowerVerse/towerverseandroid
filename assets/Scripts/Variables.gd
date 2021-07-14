@@ -1,5 +1,6 @@
 extends Node
 
+const APP_VERSION = '0.2a1'
 const WSS_URL = 'wss://towerverse.herokuapp.com'
 const DEBUG = true
 const SAVE_FILENAME = 'user://towerverse.bin'

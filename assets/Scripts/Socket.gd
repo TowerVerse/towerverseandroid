@@ -4,7 +4,7 @@ var _wss = WebSocketClient.new()
 
 var _fetched_packets: Dictionary = {}
 
-var is_connected: bool
+var is_connected: bool = false
 
 signal towerverse_connected
 signal fetch_added
@@ -18,7 +18,8 @@ func _ready() -> void:
 	if connection_result != OK:
 		is_connected = false
 	
-	_wss.set_target_peer(1)
+	else:
+		_wss.set_target_peer(1)
 
 	_wss.connect('connection_established', self, '_connection_established')
 	_wss.connect('data_received', self, '_data_recieved')
@@ -26,6 +27,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if _wss.get_connection_status() == NetworkedMultiplayerPeer.CONNECTION_DISCONNECTED:
 		return
+		
 	_wss.poll()
 
 func _connection_established(_protocol: String):
@@ -43,13 +45,15 @@ func _data_recieved():
 	emit_signal('fetch_added')
 
 func send_packet(event: String, data: Dictionary = {}) -> void:
+	var final_packet = {}
 	var final_packet_ref = Uuid.v4()
-	
-	var final_packet = {'event': event, 'ref': final_packet_ref}
 	
 	for key in data.keys():
 		final_packet[key] = data[key]
-		
+	
+	final_packet['event'] = event
+	final_packet['ref'] = final_packet_ref
+	
 	if not is_connected:
 		yield(self, 'towerverse_connected')
 		
@@ -73,10 +77,14 @@ func _format_packet(data: Dictionary) -> PoolByteArray:
 	return JSON.print(data).to_utf8()
 
 func disconnect_socket():
-	if is_connected:
-		_wss.disconnect_from_host()
-		is_connected = false
+	if not is_connected:
+		return
+	
+	_wss.disconnect_from_host()
+	is_connected = false
 
 func connect_socket():
-	if not is_connected:
-		_wss.connect_to_url(Variables.WSS_URL)
+	if is_connected:
+		return
+		
+	_wss.connect_to_url(Variables.WSS_URL)
