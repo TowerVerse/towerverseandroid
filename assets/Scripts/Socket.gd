@@ -22,7 +22,7 @@ func _ready() -> void:
 
 	_wss.connect('connection_established', self, '_connection_established')
 	_wss.connect('data_received', self, '_data_recieved')
-	
+
 func _process(_delta: float) -> void:
 	if _wss.get_connection_status() == NetworkedMultiplayerPeer.CONNECTION_DISCONNECTED:
 		return

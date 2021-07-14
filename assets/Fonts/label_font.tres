@@ -1,8 +1,8 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 80
+size = 45
 use_filter = true
 font_data = ExtResource( 1 )

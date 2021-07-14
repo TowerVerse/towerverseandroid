@@ -4,10 +4,25 @@
 
 ## What's this?
 
-**This repository includes the source code of the mobile app of TowerVerse, made in Godot 3.**
+**This repository includes the source code of the mobile app of TowerVerse, made in [Godot](https://godotengine.org).**
 
+## [Contributing](https://github.com/TowerVerse/towerverseandroid/blob/master/CONTRIBUTING.md)
 
 ## Installing
 
-**Check the Releases page for the latest version.**
+### Requirements
+
+- **OS: Windows 10/macOS/Linux distribution**
+- **OpenGL 3 support**
+- **[Godot 3](https://godotengine.org/download)**
+
+### Procedure
+
+- **Fork this repository.**
+
+- **```git clone {fork repository}```**
+
+- **```cd {fork directory}```**
+
+- **Open the [project.godot](https://github.com/TowerVerse/towerverseandroid/blob/master/project.godot) file in Godot.**
 
