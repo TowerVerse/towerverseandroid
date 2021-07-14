@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func check_file() -> void:
 	if not file.file_exists(Variables.SAVE_FILENAME):
-		var file_result = file.open(Variables.SAVE_FILENAME, File.WRITE)
+		var file_result = file.open_encrypted_with_pass(Variables.SAVE_FILENAME, File.WRITE, Variables.SAVE_PASSWORD)
 		
 		if file_result == FAILED || file_result == ERR_FILE_NO_PERMISSION || file_result == ERR_FILE_ALREADY_IN_USE || file_result == ERR_FILE_CANT_WRITE:
 			Utils.log('Error occured while attempting to create file, aborting.')
@@ -26,7 +26,7 @@ func add_value(key: String, value, set: bool = false) -> void:
 	if key in file_dict.keys() and not set:
 		return
 
-	file.open(Variables.SAVE_FILENAME, File.WRITE)
+	file.open_encrypted_with_pass(Variables.SAVE_FILENAME, File.WRITE, Variables.SAVE_PASSWORD)
 
 	file_dict[key] = value
 
@@ -44,7 +44,7 @@ func remove_value(key: String) -> void:
 	if not key in file_dict:
 		return
 
-	file.open(Variables.SAVE_FILENAME, File.WRITE)
+	file.open_encrypted_with_pass(Variables.SAVE_FILENAME, File.WRITE, Variables.SAVE_PASSWORD)
 	
 	file_dict.erase(key)
 	
@@ -66,6 +66,6 @@ func get_file_dict() -> Dictionary:
 	
 	var temp_file = File.new()
 	
-	temp_file.open(Variables.SAVE_FILENAME, File.READ_WRITE)
+	temp_file.open_encrypted_with_pass(Variables.SAVE_FILENAME, File.READ, Variables.SAVE_PASSWORD)
 	
 	return JSON.parse(temp_file.get_as_text()).result
