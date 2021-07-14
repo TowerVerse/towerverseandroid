@@ -41,11 +41,8 @@ func process_packets():
 		loading_label.text = packet['text']
 		
 		event = packet['event']
-		
 		final_packet = {}
-		
 		callback = null
-		
 		target_args = packet['target_args']
 		
 		if 'callback' in packet:
