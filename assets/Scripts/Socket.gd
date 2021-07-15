@@ -56,7 +56,7 @@ func send_packet(event: String, data: Dictionary = {}) -> void:
 	
 	if not is_connected:
 		yield(self, 'towerverse_connected')
-		
+	
 	_send_wss_packet(_format_packet(final_packet))
 	
 	while not str(final_packet_ref) in _fetched_packets:

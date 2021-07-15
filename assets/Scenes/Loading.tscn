@@ -5,7 +5,6 @@
 [ext_resource path="res://assets/Themes/progress_bar_bg.tres" type="StyleBox" id=3]
 [ext_resource path="res://assets/Themes/progress_bar_fg.tres" type="StyleBox" id=4]
 
-
 [node name="Loading" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,7 +27,6 @@ custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 value = 10.0
-rounded = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

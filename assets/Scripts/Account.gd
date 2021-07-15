@@ -34,7 +34,7 @@ func _ready() -> void:
 	Utils.log('Account started.')
 	
 	fade_in()
-	
+
 # PC testing, no effect on mobile
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('ui_back'):
@@ -47,7 +47,7 @@ func _input(event: InputEvent) -> void:
 		else:
 			has_selected = false
 			fade_in_buttons_and_fade_out_ui()
-	
+
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
 		if tween.is_active() || is_verification || is_handling:
@@ -59,7 +59,7 @@ func _notification(what: int) -> void:
 		else:
 			has_selected = false
 			fade_in_buttons_and_fade_out_ui()
-	
+
 func fade_in() -> void:
 	account_buttons_container.visible = true
 	
