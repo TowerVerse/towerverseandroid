@@ -1,20 +1,15 @@
 extends Control
 
+onready var tween = get_node('tween')
 onready var loading_scene = get_node('.')
+
 onready var loading_label = get_node('loading_label')
 onready var loading_progress = get_node('loading_progress')
-onready var tween = get_node('tween')
 
 func _ready() -> void:
 	Utils.log('Loading started.')
-	
-	fade_in()
 		
 	start_progress()
-
-func fade_in():
-	tween.interpolate_property(loading_scene, 'modulate', Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.4)
-	tween.start()
 
 func start_progress():
 	loading_progress.value = 0
@@ -70,6 +65,10 @@ func process_packets():
 				loading_progress.value += progress_to_add
 			_:
 				Utils.log('Error calling ' + event + ': '+ str(result_response))
+				
+				Variables.loading_packets = {}
+				Variables.loading_redirect = ''
+				
 				get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 				return
 	
@@ -77,6 +76,9 @@ func process_packets():
 	
 	loading_label.text = 'Finished.'
 	
-	Variables.loading_packets = {}
+	var temp_redirect = Variables.loading_redirect
 	
-	get_tree().change_scene(Variables.loading_redirect)
+	Variables.loading_packets = {}
+	Variables.loading_redirect = ''
+	
+	get_tree().change_scene(temp_redirect)

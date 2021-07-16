@@ -2,25 +2,28 @@ extends Control
 
 onready var tween = get_node('tween')
 onready var start_menu = get_node('.')
+
+onready var play_button = get_node('button_container/play_button')
+onready var options_button = get_node('button_container/options_button')
+onready var about_button = get_node('button_container/about_button')
+
 onready var version_label = get_node('version_container/version_label')
+
+var button_translate_offset: float = -600
 
 func _ready() -> void:
 	Utils.log('StartMenu started.')
 	
-	fade_in()
+	version_label.text = Variables.APP_VERSION
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
 		get_tree().quit()
 
-func fade_in():
-	version_label.text = Variables.APP_VERSION
-	
-	tween.interpolate_property(start_menu, 'modulate', Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1)
-	tween.start()
-
 # Signals
 func _on_play_button_pressed() -> void:
+	
+	print('pr')
 	
 	var email = Save.get_value('travellerEmail')
 	var password = Save.get_value('travellerPassword')

@@ -20,7 +20,7 @@ func add_loading_packet(event: String, redirect: String, data: Dictionary = {}, 
 	if callback:
 		final_packet['callback'] = callback
 	
-	Variables.loading_packets[len(Variables.loading_packets)] = final_packet
+	Variables.loading_packets[0] = final_packet
 	Variables.loading_redirect = redirect
 
 func save_credentials(travellerEmail: String, travellerPassword: String):

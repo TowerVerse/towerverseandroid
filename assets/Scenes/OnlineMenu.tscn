@@ -1,48 +1,71 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/Fonts/onlinemenu_top_info.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/Icons/bottom_icon.png" type="Texture" id=2]
-[ext_resource path="res://assets/Icons/bottom_icon_2.png" type="Texture" id=3]
-[ext_resource path="res://assets/Fonts/onlinemenu_general_labels.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/Icons/guild_icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/Scripts/OnlineMenu.gd" type="Script" id=5]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.254902, 0.254902, 0.254902, 1 )
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.0117647, 0.203922, 0.172549, 1 )
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
 
-[sub_resource type="AnimatedTexture" id=3]
-frames = 2
-fps = 2.0
-frame_0/texture = ExtResource( 2 )
-frame_1/texture = ExtResource( 3 )
-frame_1/delay_sec = 0.0
+[sub_resource type="StyleBoxTexture" id=13]
+texture = SubResource( 12 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 1 )
+colors = PoolColorArray( 0.0431373, 0.403922, 0.34902, 1 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = SubResource( 10 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 1 )
+colors = PoolColorArray( 0, 0.717647, 0.607843, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+width = 120
 
 [node name="OnlineMenu" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -360.0
+margin_top = -760.0
+margin_right = 360.0
+margin_bottom = 760.0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="towers_container" type="PanelContainer" parent="."]
+[node name="onlinemenu_bg" type="Panel" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="towers_container" type="VBoxContainer" parent="."]
+visible = false
 anchor_right = 1.0
 margin_bottom = 1370.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="towers_vbox_container" type="VBoxContainer" parent="towers_container"]
-margin_right = 720.0
-margin_bottom = 1370.0
-
-[node name="towers_label" type="Label" parent="towers_container/towers_vbox_container"]
+[node name="towers_label" type="Label" parent="towers_container"]
 margin_right = 720.0
 margin_bottom = 91.0
 custom_fonts/font = ExtResource( 1 )
@@ -50,23 +73,13 @@ text = "TowerVerse"
 align = 1
 valign = 1
 
-[node name="online_travellers_label" type="Label" parent="towers_container/towers_vbox_container"]
-margin_top = 99.0
-margin_right = 720.0
-margin_bottom = 156.0
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 4 )
-text = "Online travellers: 0"
-valign = 1
-
-[node name="guilds_container" type="PanelContainer" parent="."]
-visible = false
+[node name="guilds_container" type="VBoxContainer" parent="."]
 anchor_right = 1.0
-margin_bottom = 1370.0
+margin_top = 71.0
+margin_bottom = 1371.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -87,25 +100,36 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -149.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bottom_pressed_texture" type="TextureRect" parent="bottom_container"]
+margin_left = 300.0
+margin_right = 420.0
+margin_bottom = 149.0
+size_flags_horizontal = 4
+texture = SubResource( 8 )
+stretch_mode = 1
 
 [node name="bottom_hbox_container" type="HBoxContainer" parent="bottom_container"]
 margin_right = 720.0
 margin_bottom = 149.0
 custom_constants/separation = 40
 alignment = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="bottom_towerverse_icon" type="TextureButton" parent="bottom_container/bottom_hbox_container"]
-margin_left = 295.0
-margin_top = 9.0
-margin_right = 425.0
-margin_bottom = 139.0
+[node name="bottom_guilds_button" type="TextureButton" parent="bottom_container/bottom_hbox_container"]
+margin_left = 300.0
+margin_top = 14.0
+margin_right = 420.0
+margin_bottom = 134.0
 size_flags_vertical = 4
-texture_normal = SubResource( 3 )
+texture_normal = ExtResource( 2 )
 
 [node name="tween" type="Tween" parent="."]
 
-[connection signal="pressed" from="bottom_container/bottom_hbox_container/bottom_towerverse_icon" to="." method="_on_bottom_towerverse_icon_pressed"]
+[connection signal="pressed" from="bottom_container/bottom_hbox_container/bottom_guilds_button" to="." method="_on_bottom_guilds_button_pressed"]

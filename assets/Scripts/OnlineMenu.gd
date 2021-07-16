@@ -4,19 +4,14 @@ onready var tween = get_node('tween')
 onready var online_menu = get_node('.')
 
 onready var towers_container = get_node('towers_container')
-onready var online_travellers = get_node('towers_container/towers_vbox_container/online_travellers_label')
 
 onready var guilds_container = get_node('guilds_container')
-
-onready var logo_texture = get_node('bottom_container/bottom_hbox_container/bottom_towerverse_icon')
 
 var is_towers_tab: bool = false
 var is_guilds_tab: bool = false
 
 func _ready() -> void:
 	Utils.log('OnlineMenu started.')
-	
-	fade_in()
 	
 	setup_ui_server_values()
 
@@ -38,15 +33,8 @@ func _notification(what):
 		
 		get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 
-func fade_in() -> void:
-	tween.interpolate_property(online_menu, 'modulate', Color(0, 0, 0, 0), Color(1, 1, 1, 1), 1)
-	tween.start()
-
 func setup_ui_server_values() -> void:
-	# Online travellers
-	Socket.send_packet('onlineTravellers')
-	
-	online_travellers.text = 'Online travellers: ' + str(yield(Socket, 'packet_fetched')['data']['onlineTravellers'])
+	pass
 
 func change_tab(tab_num: int) -> void:
 	match tab_num:
@@ -72,5 +60,5 @@ func change_tab(tab_num: int) -> void:
 			Utils.log('Invalid tab number provided to change_tab: ' + str(tab_num))
 
 # Signals
-func _on_bottom_towerverse_icon_pressed():
-	change_tab(0)
+func _on_bottom_guilds_button_pressed():
+	change_tab(1)

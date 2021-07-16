@@ -8,17 +8,17 @@ onready var acc_register_button = get_node('account_buttons_container/acc_regist
 onready var acc_login_button = get_node('account_buttons_container/acc_login_button')
 
 onready var register_container = get_node('register_container')
-onready var register_error_label = get_node("register_container/register_error_label")
-onready var register_username = get_node('register_container/register_username_container/register_username')
-onready var register_email = get_node('register_container/register_email_container/register_email')
-onready var register_password = get_node('register_container/register_password_container/register_password')
-onready var register_button = get_node("register_container/register_button")
+onready var register_error_label = get_node('register_container/register_error_label')
+onready var register_username = get_node('register_container/register_username')
+onready var register_email = get_node('register_container/register_email')
+onready var register_password = get_node('register_container/register_password')
+onready var register_button = get_node('register_container/register_button')
 
 onready var login_container = get_node('login_container')
 onready var login_error_label = get_node('login_container/login_error_label')
-onready var login_email = get_node('login_container/login_email_container/login_email')
-onready var login_password = get_node('login_container/login_password_container/login_password')
-onready var login_button = get_node("login_container/login_button")
+onready var login_email = get_node('login_container/login_email')
+onready var login_password = get_node('login_container/login_password')
+onready var login_button = get_node('login_container/login_button')
 
 onready var verification_container = get_node('verification_container')
 onready var verification_error_label = get_node('verification_container/verification_error_label')
@@ -33,7 +33,16 @@ var is_handling: bool = false
 func _ready() -> void:
 	Utils.log('Account started.')
 	
-	fade_in()
+	account_buttons_container.visible = true
+	
+	register_container.visible = false
+	register_error_label.visible = false
+	
+	verification_container.visible = false
+	verification_error_label.visible = false
+	
+	login_container.visible = false
+	login_error_label.visible = false
 
 # PC testing, no effect on mobile
 func _input(event: InputEvent) -> void:
@@ -59,21 +68,6 @@ func _notification(what: int) -> void:
 		else:
 			has_selected = false
 			fade_in_buttons_and_fade_out_ui()
-
-func fade_in() -> void:
-	account_buttons_container.visible = true
-	
-	register_container.visible = false
-	register_error_label.visible = false
-	
-	verification_container.visible = false
-	verification_error_label.visible = false
-	
-	login_container.visible = false
-	login_error_label.visible = false
-	
-	tween.interpolate_property(account_scene, 'modulate', Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1)
-	tween.start()
 
 func fade_in_buttons_and_fade_out_ui() -> void:
 	if is_register:

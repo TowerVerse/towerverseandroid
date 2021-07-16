@@ -37,8 +37,8 @@ settings/crash_handler/message="An error has occured, TowerVerse will exit."
 window/size/width=720
 window/size/height=1520
 window/size/resizable=false
-window/size/test_width=1024
-window/size/test_height=720
+window/size/test_width=720
+window/size/test_height=1520
 window/vsync/use_vsync=false
 window/handheld/orientation="sensor_portrait"
 window/stretch/mode="2d"
@@ -107,6 +107,10 @@ ui_back={
 
 pointing/emulate_touch_from_mouse=true
 
+[logging]
+
+file_logging/enable_file_logging.pc=false
+
 [network]
 
 limits/tcp/connect_timeout_seconds=10
@@ -126,4 +130,3 @@ quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 vram_compression/import_etc=true
 environment/default_clear_color=Color( 0.184314, 0.184314, 0.184314, 1 )
-quality/depth/hdr=false
