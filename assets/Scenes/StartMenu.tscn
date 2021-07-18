@@ -1,15 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://assets/Themes/button_pressed.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/Scripts/StartMenu.gd" type="Script" id=3]
-[ext_resource path="res://assets/Themes/button_normal.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/Fonts/button_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/Fonts/label_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0 )
-colors = PoolColorArray( 0.027451, 0.254902, 0.219608, 1 )
+colors = PoolColorArray( 0.109804, 0.12549, 0.105882, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
@@ -18,15 +15,109 @@ gradient = SubResource( 1 )
 texture = SubResource( 2 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
-[node name="StartMenu" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -360.0
-margin_top = -760.0
-margin_right = 360.0
-margin_bottom = 760.0
+[sub_resource type="DynamicFontData" id=15]
+font_path = "res://assets/Fonts/Roboto-Light.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+use_filter = true
+font_data = SubResource( 15 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.317647, 0.0823529, 0.717647, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.576471, 0.352941, 0.952941, 1 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+corner_detail = 10
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+expand_margin_top = 25.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="DynamicFontData" id=16]
+font_path = "res://assets/Fonts/Roboto-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+size = 80
+use_filter = true
+font_data = SubResource( 16 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.945098, 0.152941, 0.152941, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.760784, 0.145098, 0.145098, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+expand_margin_top = 25.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+expand_margin_top = 25.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.576471, 0.352941, 0.952941, 1 )
+
+[sub_resource type="DynamicFontData" id=17]
+font_path = "res://assets/Fonts/Roboto-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 24
+use_filter = true
+font_data = SubResource( 17 )
+
+[sub_resource type="DynamicFontData" id=18]
+font_path = "res://assets/Fonts/Roboto-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+use_filter = true
+font_data = SubResource( 18 )
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://assets/Fonts/Roboto-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=11]
+size = 36
+use_filter = true
+font_data = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 24
+use_filter = true
+font_data = ExtResource( 7 )
+
+[node name="StartMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_top = 15
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,49 +125,71 @@ __meta__ = {
 
 [node name="startmenu_bg" type="Panel" parent="."]
 show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_top = 15.0
+margin_right = 720.0
+margin_bottom = 1280.0
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="logo_label" type="TextureRect" parent="."]
-margin_left = 260.0
-margin_top = 130.0
-margin_right = 460.0
-margin_bottom = 330.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 1 )
-stretch_mode = 4
+[node name="container" type="VBoxContainer" parent="."]
+margin_left = 168.0
+margin_top = 15.0
+margin_right = 551.0
+margin_bottom = 163.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="logo" type="Label" parent="container"]
+margin_right = 383.0
+margin_bottom = 85.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.564706, 0.886275, 0.596078, 1 )
+text = "TowerVerse"
+
+[node name="version" type="Label" parent="container"]
+margin_left = 147.0
+margin_top = 105.0
+margin_right = 236.0
+margin_bottom = 148.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+text = "0.2a1"
+
 [node name="button_container" type="VBoxContainer" parent="."]
-margin_left = 201.0
-margin_top = 533.0
-margin_right = 519.0
-margin_bottom = 986.0
-custom_constants/separation = 60
+margin_left = 220.0
+margin_top = 427.0
+margin_right = 500.0
+margin_bottom = 868.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 72
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="play_button" type="Button" parent="button_container"]
-margin_right = 318.0
-margin_bottom = 111.0
+margin_right = 280.0
+margin_bottom = 99.0
+focus_mode = 0
 size_flags_horizontal = 5
-custom_styles/hover = ExtResource( 4 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 4 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_hover = Color( 0.67451, 1, 0.870588, 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color_disabled = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color_hover = Color( 0.898039, 0.862745, 0.956863, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 text = "Play"
 __meta__ = {
@@ -85,18 +198,19 @@ __meta__ = {
 
 [node name="options_button" type="Button" parent="button_container"]
 margin_top = 171.0
-margin_right = 318.0
-margin_bottom = 282.0
+margin_right = 280.0
+margin_bottom = 270.0
+focus_mode = 0
 size_flags_horizontal = 5
-custom_styles/hover = ExtResource( 4 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 4 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_hover = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color_disabled = Color( 0.988235, 0.839216, 0.839216, 1 )
+custom_colors/font_color = Color( 0.988235, 0.839216, 0.839216, 1 )
+custom_colors/font_color_hover = Color( 0.988235, 0.839216, 0.839216, 1 )
+custom_colors/font_color_pressed = Color( 0.988235, 0.839216, 0.839216, 1 )
 text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -104,41 +218,101 @@ __meta__ = {
 
 [node name="about_button" type="Button" parent="button_container"]
 margin_top = 342.0
-margin_right = 318.0
-margin_bottom = 453.0
+margin_right = 280.0
+margin_bottom = 441.0
+focus_mode = 0
 size_flags_horizontal = 5
-custom_styles/hover = ExtResource( 4 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 4 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_hover = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color_disabled = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_colors/font_color_hover = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_colors/font_color_pressed = Color( 0.929412, 0.929412, 0.929412, 1 )
 text = "About"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="version_container" type="HBoxContainer" parent="."]
-margin_left = 303.0
-margin_top = 1469.0
-margin_right = 417.0
-margin_bottom = 1520.0
-alignment = 1
+[node name="bottom_container" type="PanelContainer" parent="."]
+margin_top = 1179.0
+margin_right = 720.0
+margin_bottom = 1280.0
+size_flags_vertical = 10
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="version_label" type="Label" parent="version_container"]
-margin_right = 114.0
-margin_bottom = 51.0
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
-text = "0.2a1"
-align = 1
-valign = 1
+[node name="margin_container" type="MarginContainer" parent="bottom_container"]
+margin_right = 720.0
+margin_bottom = 101.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+
+[node name="h_box_container" type="HBoxContainer" parent="bottom_container/margin_container"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 705.0
+margin_bottom = 86.0
+
+[node name="update_container" type="VBoxContainer" parent="bottom_container/margin_container/h_box_container"]
+margin_top = 6.0
+margin_right = 309.0
+margin_bottom = 64.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+custom_constants/separation = 0
+
+[node name="label" type="Label" parent="bottom_container/margin_container/h_box_container/update_container"]
+margin_right = 309.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+text = "Update 1.01: New Levels and"
+
+[node name="link" type="LinkButton" parent="bottom_container/margin_container/h_box_container/update_container"]
+margin_left = 126.0
+margin_top = 29.0
+margin_right = 183.0
+margin_bottom = 58.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.956863, 0.580392, 1 )
+custom_colors/font_color_hover = Color( 1, 0.956863, 0.580392, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.956863, 0.580392, 1 )
+enabled_focus_mode = 0
+text = "more"
+
+[node name="player_count_container" type="VBoxContainer" parent="bottom_container/margin_container/h_box_container"]
+margin_left = 533.0
+margin_right = 690.0
+margin_bottom = 71.0
+size_flags_horizontal = 10
+size_flags_vertical = 4
+custom_constants/separation = 0
+
+[node name="count" type="Label" parent="bottom_container/margin_container/h_box_container/player_count_container"]
+margin_left = 38.0
+margin_right = 118.0
+margin_bottom = 43.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+text = "1045"
+
+[node name="text" type="Label" parent="bottom_container/margin_container/h_box_container/player_count_container"]
+margin_top = 43.0
+margin_right = 157.0
+margin_bottom = 71.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+text = "players online"
 
 [node name="tween" type="Tween" parent="."]
 

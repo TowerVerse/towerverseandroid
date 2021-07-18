@@ -7,7 +7,7 @@ onready var play_button = get_node('button_container/play_button')
 onready var options_button = get_node('button_container/options_button')
 onready var about_button = get_node('button_container/about_button')
 
-onready var version_label = get_node('version_container/version_label')
+onready var version_label = get_node('container/version')
 
 var button_translate_offset: float = -600
 
