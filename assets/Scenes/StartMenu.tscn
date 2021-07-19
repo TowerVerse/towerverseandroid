@@ -2,7 +2,6 @@
 
 [ext_resource path="res://assets/Scripts/StartMenu.gd" type="Script" id=3]
 [ext_resource path="res://assets/Fonts/label_font.tres" type="DynamicFont" id=6]
-[ext_resource path="res://assets/Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0 )
@@ -101,18 +100,21 @@ size = 24
 use_filter = true
 font_data = SubResource( 18 )
 
-[sub_resource type="DynamicFontData" id=13]
+[sub_resource type="DynamicFontData" id=19]
 font_path = "res://assets/Fonts/Roboto-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=11]
 size = 36
 use_filter = true
-font_data = SubResource( 13 )
+font_data = SubResource( 19 )
+
+[sub_resource type="DynamicFontData" id=20]
+font_path = "res://assets/Fonts/Roboto-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=12]
 size = 24
 use_filter = true
-font_data = ExtResource( 7 )
+font_data = SubResource( 20 )
 
 [node name="StartMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -237,7 +239,7 @@ __meta__ = {
 }
 
 [node name="bottom_container" type="PanelContainer" parent="."]
-margin_top = 1179.0
+margin_top = 1178.0
 margin_right = 720.0
 margin_bottom = 1280.0
 size_flags_vertical = 10
@@ -248,7 +250,7 @@ __meta__ = {
 
 [node name="margin_container" type="MarginContainer" parent="bottom_container"]
 margin_right = 720.0
-margin_bottom = 101.0
+margin_bottom = 102.0
 custom_constants/margin_right = 15
 custom_constants/margin_top = 15
 custom_constants/margin_left = 15
@@ -258,12 +260,12 @@ custom_constants/margin_bottom = 15
 margin_left = 15.0
 margin_top = 15.0
 margin_right = 705.0
-margin_bottom = 86.0
+margin_bottom = 87.0
 
 [node name="update_container" type="VBoxContainer" parent="bottom_container/margin_container/h_box_container"]
-margin_top = 6.0
+margin_top = 7.0
 margin_right = 309.0
-margin_bottom = 64.0
+margin_bottom = 65.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
 custom_constants/separation = 0
@@ -289,16 +291,16 @@ enabled_focus_mode = 0
 text = "more"
 
 [node name="player_count_container" type="VBoxContainer" parent="bottom_container/margin_container/h_box_container"]
-margin_left = 533.0
+margin_left = 543.0
 margin_right = 690.0
-margin_bottom = 71.0
+margin_bottom = 72.0
 size_flags_horizontal = 10
 size_flags_vertical = 4
 custom_constants/separation = 0
 
 [node name="count" type="Label" parent="bottom_container/margin_container/h_box_container/player_count_container"]
-margin_left = 38.0
-margin_right = 118.0
+margin_left = 33.0
+margin_right = 113.0
 margin_bottom = 43.0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 11 )
@@ -307,8 +309,8 @@ text = "1045"
 
 [node name="text" type="Label" parent="bottom_container/margin_container/h_box_container/player_count_container"]
 margin_top = 43.0
-margin_right = 157.0
-margin_bottom = 71.0
+margin_right = 147.0
+margin_bottom = 72.0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
