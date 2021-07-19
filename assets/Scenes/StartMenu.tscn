@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/Scripts/StartMenu.gd" type="Script" id=3]
-[ext_resource path="res://assets/Fonts/label_font.tres" type="DynamicFont" id=6]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0 )
@@ -13,6 +12,14 @@ gradient = SubResource( 1 )
 [sub_resource type="StyleBoxTexture" id=3]
 texture = SubResource( 2 )
 region_rect = Rect2( 0, 0, 2048, 1 )
+
+[sub_resource type="DynamicFontData" id=20]
+font_path = "res://assets/Fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=21]
+size = 64
+use_filter = true
+font_data = SubResource( 20 )
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Fonts/Roboto-Light.ttf"
@@ -136,10 +143,10 @@ __meta__ = {
 }
 
 [node name="logo_container" type="VBoxContainer" parent="."]
-margin_left = 164.0
+margin_left = 188.0
 margin_top = 15.0
-margin_right = 556.0
-margin_bottom = 163.0
+margin_right = 531.0
+margin_bottom = 154.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
@@ -149,18 +156,18 @@ __meta__ = {
 }
 
 [node name="logo" type="Label" parent="logo_container"]
-margin_right = 392.0
-margin_bottom = 85.0
+margin_right = 343.0
+margin_bottom = 76.0
 size_flags_horizontal = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 0.564706, 0.886275, 0.596078, 1 )
 text = "TowerVerse"
 
 [node name="version" type="Label" parent="logo_container"]
-margin_left = 152.0
-margin_top = 105.0
-margin_right = 240.0
-margin_bottom = 148.0
+margin_left = 127.0
+margin_top = 96.0
+margin_right = 215.0
+margin_bottom = 139.0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )

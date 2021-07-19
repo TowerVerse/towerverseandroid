@@ -7,15 +7,15 @@
 [ext_resource path="res://assets/Fonts/button1_font.tres" type="DynamicFont" id=9]
 [ext_resource path="res://assets/Fonts/placeholder_font.tres" type="DynamicFont" id=10]
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=12]
 font_path = "res://assets/Fonts/Roboto-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=13]
 size = 72
 use_filter = true
-font_data = SubResource( 1 )
+font_data = SubResource( 12 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.219608, 0.843137, 0.282353, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -32,15 +32,15 @@ expand_margin_right = 50.0
 expand_margin_top = 20.0
 expand_margin_bottom = 20.0
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=15]
 font_path = "res://assets/Fonts/Roboto-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=16]
 size = 64
 use_filter = true
-font_data = SubResource( 4 )
+font_data = SubResource( 15 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.317647, 0.0823529, 0.717647, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -57,7 +57,7 @@ expand_margin_right = 35.0
 expand_margin_top = 20.0
 expand_margin_bottom = 20.0
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="StyleBoxFlat" id=11]
@@ -100,11 +100,12 @@ __meta__ = {
 margin_top = 76.0
 margin_right = 566.0
 margin_bottom = 161.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.564706, 0.886275, 0.596078, 1 )
 text = "Traveller account"
 
 [node name="account_buttons_container" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -123,10 +124,10 @@ margin_right = 239.0
 margin_bottom = 80.0
 focus_mode = 0
 size_flags_horizontal = 4
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 14 )
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color_disabled = Color( 0.886275, 0.988235, 0.894118, 1 )
 custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
@@ -141,7 +142,7 @@ __meta__ = {
 margin_top = 95.0
 margin_right = 239.0
 margin_bottom = 171.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.847059, 0.847059, 0.847059, 1 )
 text = "or"
 align = 1
@@ -157,10 +158,10 @@ margin_right = 166.0
 margin_bottom = 233.0
 focus_mode = 0
 size_flags_horizontal = 4
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 17 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.898039, 0.862745, 0.956863, 1 )
 custom_colors/font_color = Color( 0.898039, 0.862745, 0.956863, 1 )
@@ -172,14 +173,14 @@ __meta__ = {
 }
 
 [node name="register_container" type="VBoxContainer" parent="."]
-visible = false
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -247.0
-margin_top = -900.0
-margin_right = 248.0
+anchor_bottom = 0.5
+margin_left = -247.5
+margin_top = -290.0
+margin_right = 247.5
+margin_bottom = 383.0
 custom_constants/separation = 12
 alignment = 1
 __meta__ = {
@@ -187,9 +188,9 @@ __meta__ = {
 }
 
 [node name="register_error_label" type="Label" parent="register_container"]
-margin_top = 195.0
-margin_right = 495.0
-margin_bottom = 224.0
+margin_top = 79.0
+margin_right = 494.0
+margin_bottom = 108.0
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.980392, 0.305882, 0.305882, 1 )
 align = 1
@@ -201,17 +202,17 @@ __meta__ = {
 }
 
 [node name="line_edit_container" type="VBoxContainer" parent="register_container"]
-margin_top = 236.0
-margin_right = 495.0
-margin_bottom = 550.0
+margin_top = 120.0
+margin_right = 494.0
+margin_bottom = 440.0
 custom_constants/separation = 19
 
 [node name="register_username_label" type="Label" parent="register_container/line_edit_container"]
-margin_right = 169.0
-margin_bottom = 41.0
+margin_right = 163.0
+margin_bottom = 43.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 18 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Username"
@@ -221,9 +222,9 @@ __meta__ = {
 }
 
 [node name="register_username" type="LineEdit" parent="register_container/line_edit_container"]
-margin_top = 60.0
-margin_right = 495.0
-margin_bottom = 92.0
+margin_top = 62.0
+margin_right = 494.0
+margin_bottom = 94.0
 custom_styles/read_only = SubResource( 11 )
 custom_styles/focus = SubResource( 11 )
 custom_styles/normal = SubResource( 11 )
@@ -238,12 +239,12 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="register_email_label" type="Label" parent="register_container/line_edit_container"]
-margin_top = 111.0
-margin_right = 92.0
-margin_bottom = 152.0
+margin_top = 113.0
+margin_right = 88.0
+margin_bottom = 156.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 18 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Email"
@@ -253,9 +254,9 @@ __meta__ = {
 }
 
 [node name="register_email" type="LineEdit" parent="register_container/line_edit_container"]
-margin_top = 171.0
-margin_right = 495.0
-margin_bottom = 203.0
+margin_top = 175.0
+margin_right = 494.0
+margin_bottom = 207.0
 custom_styles/read_only = SubResource( 11 )
 custom_styles/focus = SubResource( 11 )
 custom_styles/normal = SubResource( 11 )
@@ -270,12 +271,12 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="register_password_label" type="Label" parent="register_container/line_edit_container"]
-margin_top = 222.0
-margin_right = 159.0
-margin_bottom = 263.0
+margin_top = 226.0
+margin_right = 161.0
+margin_bottom = 269.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 18 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Password"
@@ -285,9 +286,9 @@ __meta__ = {
 }
 
 [node name="register_password" type="LineEdit" parent="register_container/line_edit_container"]
-margin_top = 282.0
-margin_right = 495.0
-margin_bottom = 314.0
+margin_top = 288.0
+margin_right = 494.0
+margin_bottom = 320.0
 custom_styles/read_only = SubResource( 11 )
 custom_styles/focus = SubResource( 11 )
 custom_styles/normal = SubResource( 11 )
@@ -303,22 +304,22 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="register_button_container" type="MarginContainer" parent="register_container"]
-margin_top = 562.0
-margin_right = 495.0
-margin_bottom = 704.0
+margin_top = 452.0
+margin_right = 494.0
+margin_bottom = 594.0
 custom_constants/margin_top = 95
 
 [node name="button" type="Button" parent="register_container/register_button_container"]
-margin_left = 123.0
+margin_left = 122.0
 margin_top = 95.0
-margin_right = 372.0
+margin_right = 371.0
 margin_bottom = 142.0
 focus_mode = 0
 size_flags_horizontal = 4
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 17 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.898039, 0.862745, 0.956863, 1 )
 custom_colors/font_color = Color( 0.898039, 0.862745, 0.956863, 1 )
@@ -366,7 +367,7 @@ margin_right = 92.0
 margin_bottom = 41.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 18 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Email"
@@ -398,7 +399,7 @@ margin_right = 159.0
 margin_bottom = 152.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 18 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Password"
@@ -438,10 +439,10 @@ margin_right = 409.0
 margin_bottom = 142.0
 focus_mode = 0
 size_flags_horizontal = 4
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 17 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.898039, 0.862745, 0.956863, 1 )
 custom_colors/font_color = Color( 0.898039, 0.862745, 0.956863, 1 )
@@ -493,7 +494,7 @@ margin_right = 288.0
 margin_bottom = 41.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 18 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Verification code"
@@ -534,10 +535,10 @@ margin_right = 396.0
 margin_bottom = 142.0
 focus_mode = 0
 size_flags_horizontal = 4
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 17 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.898039, 0.862745, 0.956863, 1 )
 custom_colors/font_color = Color( 0.898039, 0.862745, 0.956863, 1 )
