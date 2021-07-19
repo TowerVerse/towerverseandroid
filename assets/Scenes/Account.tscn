@@ -1,110 +1,148 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/Scripts/Account.gd" type="Script" id=2]
-[ext_resource path="res://assets/Themes/button_normal.tres" type="StyleBox" id=3]
-[ext_resource path="res://assets/Themes/button_pressed.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/Fonts/button_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/Fonts/button2_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/Fonts/lineedit_font.tres" type="DynamicFont" id=6]
 [ext_resource path="res://assets/Fonts/label_font.tres" type="DynamicFont" id=7]
-[ext_resource path="res://assets/Themes/lineedit_normal.tres" type="StyleBox" id=8]
+[ext_resource path="res://assets/Fonts/button1_font.tres" type="DynamicFont" id=9]
+[ext_resource path="res://assets/Fonts/placeholder_font.tres" type="DynamicFont" id=10]
 
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0 )
-colors = PoolColorArray( 0.027451, 0.254902, 0.219608, 1 )
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/Fonts/Roboto-Bold.ttf"
 
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
-
-[sub_resource type="StyleBoxTexture" id=3]
-texture = SubResource( 2 )
-region_rect = Rect2( 0, 0, 2048, 1 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 90
+[sub_resource type="DynamicFont" id=2]
+size = 72
 use_filter = true
-font_data = ExtResource( 1 )
+font_data = SubResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.219608, 0.843137, 0.282353, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.0784314, 0.709804, 0.368627, 1 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+corner_detail = 10
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+expand_margin_top = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/Fonts/Roboto-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+use_filter = true
+font_data = SubResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.317647, 0.0823529, 0.717647, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.576471, 0.352941, 0.952941, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+expand_margin_left = 35.0
+expand_margin_right = 35.0
+expand_margin_top = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 60
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 70
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=8]
-size = 70
-use_filter = true
-font_data = ExtResource( 1 )
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.564706, 0.886275, 0.596078, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+expand_margin_left = 9.0
+expand_margin_right = 9.0
+expand_margin_top = 11.0
+expand_margin_bottom = 11.0
 
 [node name="Account" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -360.0
-margin_top = -760.0
-margin_right = 360.0
-margin_bottom = 760.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="account_bg" type="Panel" parent="."]
+[node name="title_container" type="MarginContainer" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -360.0
-margin_top = -760.0
-margin_right = 360.0
-margin_bottom = 760.0
-custom_styles/panel = SubResource( 3 )
+margin_left = -276.5
+margin_right = 276.5
+margin_bottom = 161.0
+custom_constants/margin_top = 76
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="title_label" type="Label" parent="title_container"]
+margin_top = 76.0
+margin_right = 566.0
+margin_bottom = 161.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.564706, 0.886275, 0.596078, 1 )
+text = "Traveller account"
+
 [node name="account_buttons_container" type="VBoxContainer" parent="."]
-margin_left = 193.0
-margin_top = 590.0
-margin_right = 527.0
-margin_bottom = 930.0
-alignment = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -119.5
+margin_top = -122.0
+margin_right = 119.5
+margin_bottom = 122.0
+custom_constants/separation = 15
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="acc_register_button" type="Button" parent="account_buttons_container"]
-margin_right = 334.0
-margin_bottom = 111.0
+margin_right = 239.0
+margin_bottom = 80.0
+focus_mode = 0
 size_flags_horizontal = 4
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/disabled = ExtResource( 3 )
-custom_styles/normal = ExtResource( 3 )
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_hover = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color_disabled = Color( 0.886275, 0.988235, 0.894118, 1 )
+custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
+custom_colors/font_color_hover = Color( 0.886275, 0.988235, 0.894118, 1 )
+custom_colors/font_color_pressed = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Register"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="logo_label" type="Label" parent="account_buttons_container"]
-margin_top = 119.0
-margin_right = 334.0
-margin_bottom = 221.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
+margin_top = 95.0
+margin_right = 239.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.847059, 0.847059, 0.847059, 1 )
 text = "or"
 align = 1
 valign = 1
@@ -113,20 +151,21 @@ __meta__ = {
 }
 
 [node name="acc_login_button" type="Button" parent="account_buttons_container"]
-margin_left = 53.0
-margin_top = 229.0
-margin_right = 280.0
-margin_bottom = 340.0
+margin_left = 73.0
+margin_top = 186.0
+margin_right = 166.0
+margin_bottom = 233.0
+focus_mode = 0
 size_flags_horizontal = 4
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/disabled = ExtResource( 3 )
-custom_styles/normal = ExtResource( 3 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
 custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_hover = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color_disabled = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color_hover = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color_pressed = Color( 0.898039, 0.862745, 0.956863, 1 )
 text = "Login"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -134,19 +173,25 @@ __meta__ = {
 
 [node name="register_container" type="VBoxContainer" parent="."]
 visible = false
-margin_top = 310.0
-margin_right = 720.0
-margin_bottom = 1209.0
-custom_constants/separation = 40
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -247.0
+margin_top = -900.0
+margin_right = 248.0
+custom_constants/separation = 12
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="register_error_label" type="Label" parent="register_container"]
-margin_right = 720.0
-margin_bottom = 51.0
+margin_top = 195.0
+margin_right = 495.0
+margin_bottom = 224.0
 custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.980392, 0.305882, 0.305882, 1 )
 align = 1
 valign = 1
 autowrap = true
@@ -155,109 +200,130 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="register_username_label" type="Label" parent="register_container"]
-margin_top = 91.0
-margin_right = 280.0
-margin_bottom = 159.0
+[node name="line_edit_container" type="VBoxContainer" parent="register_container"]
+margin_top = 236.0
+margin_right = 495.0
+margin_bottom = 550.0
+custom_constants/separation = 19
+
+[node name="register_username_label" type="Label" parent="register_container/line_edit_container"]
+margin_right = 169.0
+margin_bottom = 41.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Username"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="register_username" type="LineEdit" parent="register_container"]
-margin_top = 199.0
-margin_right = 720.0
-margin_bottom = 287.0
-custom_styles/read_only = ExtResource( 8 )
-custom_styles/normal = ExtResource( 8 )
+[node name="register_username" type="LineEdit" parent="register_container/line_edit_container"]
+margin_top = 60.0
+margin_right = 495.0
+margin_bottom = 92.0
+custom_styles/read_only = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
 custom_fonts/font = ExtResource( 6 )
-custom_colors/selection_color = Color( 0, 0.423529, 0.0196078, 1 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 0.184314, 0.211765, 0.176471, 1 )
+custom_colors/font_color_selected = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
 align = 1
 max_length = 60
 context_menu_enabled = false
+caret_blink = true
+caret_blink_speed = 0.5
 
-[node name="register_email_label" type="Label" parent="register_container"]
-margin_top = 327.0
-margin_right = 154.0
-margin_bottom = 395.0
+[node name="register_email_label" type="Label" parent="register_container/line_edit_container"]
+margin_top = 111.0
+margin_right = 92.0
+margin_bottom = 152.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Email"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="register_email" type="LineEdit" parent="register_container"]
-margin_top = 435.0
-margin_right = 720.0
-margin_bottom = 523.0
-custom_styles/read_only = ExtResource( 8 )
-custom_styles/normal = ExtResource( 8 )
+[node name="register_email" type="LineEdit" parent="register_container/line_edit_container"]
+margin_top = 171.0
+margin_right = 495.0
+margin_bottom = 203.0
+custom_styles/read_only = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
 custom_fonts/font = ExtResource( 6 )
-custom_colors/selection_color = Color( 0, 0.423529, 0.0196078, 1 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 0.184314, 0.211765, 0.176471, 1 )
+custom_colors/font_color_selected = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
 align = 1
 max_length = 60
 context_menu_enabled = false
+caret_blink = true
+caret_blink_speed = 0.5
 
-[node name="register_password_label" type="Label" parent="register_container"]
-margin_top = 563.0
-margin_right = 266.0
-margin_bottom = 631.0
+[node name="register_password_label" type="Label" parent="register_container/line_edit_container"]
+margin_top = 222.0
+margin_right = 159.0
+margin_bottom = 263.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Password"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="register_password" type="LineEdit" parent="register_container"]
-margin_top = 671.0
-margin_right = 720.0
-margin_bottom = 759.0
-custom_styles/read_only = ExtResource( 8 )
-custom_styles/normal = ExtResource( 8 )
+[node name="register_password" type="LineEdit" parent="register_container/line_edit_container"]
+margin_top = 282.0
+margin_right = 495.0
+margin_bottom = 314.0
+custom_styles/read_only = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
 custom_fonts/font = ExtResource( 6 )
-custom_colors/selection_color = Color( 0, 0.423529, 0.0196078, 1 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 0.184314, 0.211765, 0.176471, 1 )
+custom_colors/font_color_selected = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
 align = 1
 max_length = 50
 secret = true
 context_menu_enabled = false
+caret_blink = true
+caret_blink_speed = 0.5
 
-[node name="register_button" type="Button" parent="register_container"]
-margin_left = 104.0
-margin_top = 799.0
-margin_right = 615.0
-margin_bottom = 899.0
+[node name="register_button_container" type="MarginContainer" parent="register_container"]
+margin_top = 562.0
+margin_right = 495.0
+margin_bottom = 704.0
+custom_constants/margin_top = 95
+
+[node name="button" type="Button" parent="register_container/register_button_container"]
+margin_left = 123.0
+margin_top = 95.0
+margin_right = 372.0
+margin_bottom = 142.0
+focus_mode = 0
 size_flags_horizontal = 4
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/disabled = ExtResource( 3 )
-custom_styles/normal = ExtResource( 3 )
-custom_fonts/font = SubResource( 7 )
-custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_hover = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color_hover = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color_pressed = Color( 0.898039, 0.862745, 0.956863, 1 )
 text = "Create account"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -265,9 +331,10 @@ __meta__ = {
 
 [node name="login_container" type="VBoxContainer" parent="."]
 visible = false
-margin_top = 403.0
-margin_right = 720.0
-margin_bottom = 1116.0
+margin_left = 88.0
+margin_top = 174.0
+margin_right = 631.0
+margin_bottom = 905.0
 custom_constants/separation = 50
 alignment = 1
 __meta__ = {
@@ -275,9 +342,11 @@ __meta__ = {
 }
 
 [node name="login_error_label" type="Label" parent="login_container"]
-margin_right = 720.0
-margin_bottom = 51.0
+margin_top = 128.0
+margin_right = 543.0
+margin_bottom = 157.0
 custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.980392, 0.305882, 0.305882, 1 )
 align = 1
 valign = 1
 autowrap = true
@@ -286,80 +355,98 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="login_email_label" type="Label" parent="login_container"]
-margin_top = 101.0
-margin_right = 154.0
-margin_bottom = 169.0
+[node name="line_edi_container" type="VBoxContainer" parent="login_container"]
+margin_top = 207.0
+margin_right = 543.0
+margin_bottom = 410.0
+custom_constants/separation = 19
+
+[node name="login_email_label" type="Label" parent="login_container/line_edi_container"]
+margin_right = 92.0
+margin_bottom = 41.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Email"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="login_email" type="LineEdit" parent="login_container"]
-margin_top = 219.0
-margin_right = 720.0
-margin_bottom = 307.0
-custom_styles/read_only = ExtResource( 8 )
-custom_styles/normal = ExtResource( 8 )
+[node name="login_email" type="LineEdit" parent="login_container/line_edi_container"]
+margin_top = 60.0
+margin_right = 543.0
+margin_bottom = 92.0
+custom_styles/read_only = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
 custom_fonts/font = ExtResource( 6 )
-custom_colors/selection_color = Color( 0, 0.423529, 0.0196078, 1 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 0.184314, 0.211765, 0.176471, 1 )
+custom_colors/font_color_selected = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
 align = 1
 max_length = 60
 context_menu_enabled = false
+caret_blink = true
+caret_blink_speed = 0.5
 
-[node name="login_password_label" type="Label" parent="login_container"]
-margin_top = 357.0
-margin_right = 266.0
-margin_bottom = 425.0
+[node name="login_password_label" type="Label" parent="login_container/line_edi_container"]
+margin_top = 111.0
+margin_right = 159.0
+margin_bottom = 152.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Password"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="login_password" type="LineEdit" parent="login_container"]
-margin_top = 475.0
-margin_right = 720.0
-margin_bottom = 563.0
-custom_styles/read_only = ExtResource( 8 )
-custom_styles/normal = ExtResource( 8 )
+[node name="login_password" type="LineEdit" parent="login_container/line_edi_container"]
+margin_top = 171.0
+margin_right = 543.0
+margin_bottom = 203.0
+custom_styles/read_only = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
 custom_fonts/font = ExtResource( 6 )
-custom_colors/selection_color = Color( 0, 0.423529, 0.0196078, 1 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 0.184314, 0.211765, 0.176471, 1 )
+custom_colors/font_color_selected = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
 align = 1
 max_length = 50
 secret = true
 context_menu_enabled = false
+caret_blink = true
+caret_blink_speed = 0.5
 
-[node name="login_button" type="Button" parent="login_container"]
-margin_left = 80.0
-margin_top = 613.0
-margin_right = 639.0
-margin_bottom = 713.0
+[node name="login_button_container" type="MarginContainer" parent="login_container"]
+margin_top = 460.0
+margin_right = 543.0
+margin_bottom = 602.0
+custom_constants/margin_top = 95
+
+[node name="button" type="Button" parent="login_container/login_button_container"]
+margin_left = 134.0
+margin_top = 95.0
+margin_right = 409.0
+margin_bottom = 142.0
+focus_mode = 0
 size_flags_horizontal = 4
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/disabled = ExtResource( 3 )
-custom_styles/normal = ExtResource( 3 )
-custom_fonts/font = SubResource( 7 )
-custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_hover = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color_hover = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color_pressed = Color( 0.898039, 0.862745, 0.956863, 1 )
 text = "Login to account"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -371,10 +458,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -363.5
-margin_top = -249.5
-margin_right = 363.5
-margin_bottom = 249.5
+margin_left = -278.0
+margin_top = -258.5
+margin_right = 278.0
+margin_bottom = 258.5
 custom_constants/separation = 60
 alignment = 1
 __meta__ = {
@@ -382,9 +469,11 @@ __meta__ = {
 }
 
 [node name="verification_error_label" type="Label" parent="verification_container"]
-margin_right = 727.0
-margin_bottom = 51.0
+margin_top = 67.0
+margin_right = 556.0
+margin_bottom = 96.0
 custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.980392, 0.305882, 0.305882, 1 )
 align = 1
 valign = 1
 autowrap = true
@@ -393,16 +482,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="verification_code_label" type="Label" parent="verification_container"]
-margin_left = 85.0
-margin_top = 111.0
-margin_right = 641.0
-margin_bottom = 191.0
-size_flags_horizontal = 4
+[node name="line_edit_container" type="VBoxContainer" parent="verification_container"]
+margin_top = 156.0
+margin_right = 556.0
+margin_bottom = 248.0
+custom_constants/separation = 19
+
+[node name="verification_code_label" type="Label" parent="verification_container/line_edit_container"]
+margin_right = 288.0
+margin_bottom = 41.0
+size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0.784314, 0.341176, 1 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.886275, 0.988235, 0.894118, 1 )
 text = "Verification code"
 align = 1
 valign = 1
@@ -410,36 +503,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="verification_code" type="LineEdit" parent="verification_container"]
-margin_left = 185.0
-margin_top = 251.0
-margin_right = 541.0
-margin_bottom = 339.0
-custom_styles/read_only = ExtResource( 8 )
-custom_styles/normal = ExtResource( 8 )
+[node name="verification_code" type="LineEdit" parent="verification_container/line_edit_container"]
+margin_top = 60.0
+margin_right = 556.0
+margin_bottom = 92.0
+custom_styles/read_only = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
 custom_fonts/font = ExtResource( 6 )
-custom_colors/selection_color = Color( 0, 0.423529, 0.0196078, 1 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 0.184314, 0.211765, 0.176471, 1 )
+custom_colors/font_color_selected = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
 align = 1
-max_length = 6
+max_length = 50
+secret = true
 context_menu_enabled = false
+caret_blink = true
+caret_blink_speed = 0.5
 
-[node name="verification_button" type="Button" parent="verification_container"]
-margin_left = 118.0
-margin_top = 399.0
-margin_right = 609.0
-margin_bottom = 499.0
+[node name="verification_button_container" type="MarginContainer" parent="verification_container"]
+margin_top = 308.0
+margin_right = 556.0
+margin_bottom = 450.0
+custom_constants/margin_top = 95
+
+[node name="button" type="Button" parent="verification_container/verification_button_container"]
+margin_left = 159.0
+margin_top = 95.0
+margin_right = 396.0
+margin_bottom = 142.0
+focus_mode = 0
 size_flags_horizontal = 4
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/disabled = ExtResource( 3 )
-custom_styles/normal = ExtResource( 3 )
-custom_fonts/font = SubResource( 7 )
-custom_colors/font_color_disabled = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_hover = Color( 0.67451, 1, 0.870588, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color_hover = Color( 0.898039, 0.862745, 0.956863, 1 )
+custom_colors/font_color_pressed = Color( 0.898039, 0.862745, 0.956863, 1 )
 text = "Verify account"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -449,12 +552,12 @@ __meta__ = {
 
 [connection signal="pressed" from="account_buttons_container/acc_register_button" to="." method="_on_acc_register_button_pressed"]
 [connection signal="pressed" from="account_buttons_container/acc_login_button" to="." method="_on_acc_login_button_pressed"]
-[connection signal="text_changed" from="register_container/register_username" to="." method="_on_register_username_text_changed"]
-[connection signal="text_changed" from="register_container/register_email" to="." method="_on_register_email_text_changed"]
-[connection signal="text_changed" from="register_container/register_password" to="." method="_on_register_password_text_changed"]
-[connection signal="pressed" from="register_container/register_button" to="." method="_on_register_button_pressed"]
-[connection signal="text_changed" from="login_container/login_email" to="." method="_on_login_email_text_changed"]
-[connection signal="text_changed" from="login_container/login_password" to="." method="_on_login_password_text_changed"]
-[connection signal="pressed" from="login_container/login_button" to="." method="_on_login_button_pressed"]
-[connection signal="text_changed" from="verification_container/verification_code" to="." method="_on_verification_code_text_changed"]
-[connection signal="pressed" from="verification_container/verification_button" to="." method="_on_verification_button_pressed"]
+[connection signal="text_changed" from="register_container/line_edit_container/register_username" to="." method="_on_register_username_text_changed"]
+[connection signal="text_changed" from="register_container/line_edit_container/register_email" to="." method="_on_register_email_text_changed"]
+[connection signal="text_changed" from="register_container/line_edit_container/register_password" to="." method="_on_register_password_text_changed"]
+[connection signal="pressed" from="register_container/register_button_container/button" to="." method="_on_register_button_pressed"]
+[connection signal="text_changed" from="login_container/line_edi_container/login_email" to="." method="_on_login_email_text_changed"]
+[connection signal="text_changed" from="login_container/line_edi_container/login_password" to="." method="_on_login_password_text_changed"]
+[connection signal="pressed" from="login_container/login_button_container/button" to="." method="_on_login_button_pressed"]
+[connection signal="text_changed" from="verification_container/line_edit_container/verification_code" to="." method="_on_verification_code_text_changed"]
+[connection signal="pressed" from="verification_container/verification_button_container/button" to="." method="_on_verification_button_pressed"]
