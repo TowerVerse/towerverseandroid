@@ -15,7 +15,7 @@ onready var register_password = get_node("register_container/line_edit_container
 onready var register_button = get_node('register_container/register_button_container/button')
 
 onready var login_container = get_node('login_container')
-onready var login_error_label = get_node('login_container/login_error_label')
+onready var login_error_label = get_node("login_container/login_error_container/label")
 onready var login_email = get_node("login_container/line_edi_container/login_email")
 onready var login_password = get_node("login_container/line_edi_container/login_password")
 onready var login_button = get_node("login_container/login_button_container/button")

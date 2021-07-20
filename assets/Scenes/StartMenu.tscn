@@ -127,7 +127,7 @@ font_data = SubResource( 20 )
 [node name="StartMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_top = 50
+custom_constants/margin_top = 150
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -135,7 +135,7 @@ __meta__ = {
 
 [node name="startmenu_bg" type="Panel" parent="."]
 show_behind_parent = true
-margin_top = 50.0
+margin_top = 150.0
 margin_right = 1080.0
 margin_bottom = 1920.0
 custom_styles/panel = SubResource( 3 )
@@ -145,9 +145,9 @@ __meta__ = {
 
 [node name="logo_container" type="VBoxContainer" parent="."]
 margin_left = 279.0
-margin_top = 50.0
+margin_top = 150.0
 margin_right = 801.0
-margin_bottom = 389.0
+margin_bottom = 489.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
@@ -183,9 +183,9 @@ text = "0.2a1"
 
 [node name="button_container" type="VBoxContainer" parent="."]
 margin_left = 413.0
-margin_top = 791.0
+margin_top = 841.0
 margin_right = 666.0
-margin_bottom = 1178.0
+margin_bottom = 1228.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_constants/separation = 60
