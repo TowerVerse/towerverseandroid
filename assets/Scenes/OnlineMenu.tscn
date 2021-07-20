@@ -4,26 +4,26 @@
 [ext_resource path="res://assets/Icons/guild_icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/Scripts/OnlineMenu.gd" type="Script" id=5]
 
-[sub_resource type="Gradient" id=11]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0 )
 colors = PoolColorArray( 0.0117647, 0.203922, 0.172549, 1 )
 
-[sub_resource type="GradientTexture" id=12]
-gradient = SubResource( 11 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=13]
-texture = SubResource( 12 )
+[sub_resource type="StyleBoxTexture" id=3]
+texture = SubResource( 2 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
-[sub_resource type="Gradient" id=9]
+[sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 1 )
 colors = PoolColorArray( 0.0431373, 0.403922, 0.34902, 1 )
 
-[sub_resource type="GradientTexture" id=10]
-gradient = SubResource( 9 )
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=4]
-texture = SubResource( 10 )
+[sub_resource type="StyleBoxTexture" id=6]
+texture = SubResource( 5 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
 [sub_resource type="Gradient" id=7]
@@ -35,14 +35,8 @@ gradient = SubResource( 7 )
 width = 120
 
 [node name="OnlineMenu" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -360.0
-margin_top = -760.0
-margin_right = 360.0
-margin_bottom = 760.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -52,7 +46,7 @@ __meta__ = {
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 13 )
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -85,8 +79,8 @@ __meta__ = {
 }
 
 [node name="guilds_label" type="Label" parent="guilds_container"]
-margin_left = 243.0
-margin_right = 476.0
+margin_left = 423.0
+margin_right = 656.0
 margin_bottom = 91.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -100,21 +94,21 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -149.0
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="bottom_pressed_texture" type="TextureRect" parent="bottom_container"]
-margin_left = 300.0
-margin_right = 420.0
+margin_left = 480.0
+margin_right = 600.0
 margin_bottom = 149.0
 size_flags_horizontal = 4
 texture = SubResource( 8 )
 stretch_mode = 1
 
 [node name="bottom_hbox_container" type="HBoxContainer" parent="bottom_container"]
-margin_right = 720.0
+margin_right = 1080.0
 margin_bottom = 149.0
 custom_constants/separation = 40
 alignment = 1
@@ -123,9 +117,9 @@ __meta__ = {
 }
 
 [node name="bottom_guilds_button" type="TextureButton" parent="bottom_container/bottom_hbox_container"]
-margin_left = 300.0
+margin_left = 480.0
 margin_top = 14.0
-margin_right = 420.0
+margin_right = 600.0
 margin_bottom = 134.0
 size_flags_vertical = 4
 texture_normal = ExtResource( 2 )

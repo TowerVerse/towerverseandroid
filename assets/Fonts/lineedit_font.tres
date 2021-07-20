@@ -1,8 +1,9 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://assets/Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/Fonts/Roboto-Regular.ttf"
 
 [resource]
-size = 24
+size = 36
 use_filter = true
-font_data = ExtResource( 1 )
+font_data = SubResource( 1 )
