@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
+[ext_resource path="res://assets/Textures/towerverse_icon.png" type="Texture" id=1]
 [ext_resource path="res://assets/Scripts/StartMenu.gd" type="Script" id=3]
 
 [sub_resource type="Gradient" id=1]
@@ -107,13 +108,13 @@ size = 36
 use_filter = true
 font_data = SubResource( 16 )
 
-[sub_resource type="DynamicFontData" id=18]
-font_path = "res://assets/Fonts/Roboto-Regular.ttf"
+[sub_resource type="DynamicFontData" id=22]
+font_path = "res://assets/Fonts/Roboto-Medium.ttf"
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=23]
 size = 48
 use_filter = true
-font_data = SubResource( 18 )
+font_data = SubResource( 22 )
 
 [sub_resource type="DynamicFontData" id=20]
 font_path = "res://assets/Fonts/Roboto-Regular.ttf"
@@ -126,7 +127,7 @@ font_data = SubResource( 20 )
 [node name="StartMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_top = 15
+custom_constants/margin_top = 50
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -134,7 +135,7 @@ __meta__ = {
 
 [node name="startmenu_bg" type="Panel" parent="."]
 show_behind_parent = true
-margin_top = 15.0
+margin_top = 50.0
 margin_right = 1080.0
 margin_bottom = 1920.0
 custom_styles/panel = SubResource( 3 )
@@ -144,9 +145,9 @@ __meta__ = {
 
 [node name="logo_container" type="VBoxContainer" parent="."]
 margin_left = 279.0
-margin_top = 15.0
+margin_top = 50.0
 margin_right = 801.0
-margin_bottom = 206.0
+margin_bottom = 389.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
@@ -155,9 +156,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="logo" type="Label" parent="logo_container"]
+[node name="towerverse_icon" type="TextureRect" parent="logo_container"]
 margin_right = 522.0
-margin_bottom = 114.0
+margin_bottom = 128.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="logo" type="Label" parent="logo_container"]
+margin_top = 148.0
+margin_right = 522.0
+margin_bottom = 262.0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.564706, 0.886275, 0.596078, 1 )
@@ -165,9 +173,9 @@ text = "TowerVerse"
 
 [node name="version" type="Label" parent="logo_container"]
 margin_left = 202.0
-margin_top = 134.0
+margin_top = 282.0
 margin_right = 320.0
-margin_bottom = 191.0
+margin_bottom = 339.0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
@@ -175,9 +183,9 @@ text = "0.2a1"
 
 [node name="button_container" type="VBoxContainer" parent="."]
 margin_left = 413.0
-margin_top = 774.0
+margin_top = 791.0
 margin_right = 666.0
-margin_bottom = 1161.0
+margin_bottom = 1178.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_constants/separation = 60
@@ -310,7 +318,7 @@ margin_left = 57.0
 margin_right = 165.0
 margin_bottom = 57.0
 size_flags_horizontal = 4
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 23 )
 custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
 text = "1045"
 

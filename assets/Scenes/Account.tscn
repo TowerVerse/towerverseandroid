@@ -81,9 +81,6 @@ expand_margin_bottom = 11.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="title_container" type="MarginContainer" parent="."]
 anchor_left = 0.5
@@ -109,10 +106,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -119.5
-margin_top = -122.0
-margin_right = 119.5
-margin_bottom = 122.0
+margin_left = -133.0
+margin_top = -128.0
+margin_right = 133.0
+margin_bottom = 128.0
 custom_constants/separation = 15
 __meta__ = {
 "_edit_use_anchors_": false
@@ -188,9 +185,9 @@ __meta__ = {
 }
 
 [node name="register_error_label" type="Label" parent="register_container"]
-margin_top = 59.0
+margin_top = 35.0
 margin_right = 495.0
-margin_bottom = 88.0
+margin_bottom = 78.0
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.980392, 0.305882, 0.305882, 1 )
 align = 1
@@ -202,14 +199,14 @@ __meta__ = {
 }
 
 [node name="line_edit_container" type="VBoxContainer" parent="register_container"]
-margin_top = 100.0
+margin_top = 90.0
 margin_right = 495.0
-margin_bottom = 459.0
+margin_bottom = 470.0
 custom_constants/separation = 19
 
 [node name="register_username_label" type="Label" parent="register_container/line_edit_container"]
-margin_right = 163.0
-margin_bottom = 43.0
+margin_right = 182.0
+margin_bottom = 48.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 7 )
@@ -222,9 +219,9 @@ __meta__ = {
 }
 
 [node name="register_username" type="LineEdit" parent="register_container/line_edit_container"]
-margin_top = 62.0
+margin_top = 67.0
 margin_right = 495.0
-margin_bottom = 107.0
+margin_bottom = 114.0
 custom_styles/read_only = SubResource( 8 )
 custom_styles/focus = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
@@ -239,9 +236,9 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="register_email_label" type="Label" parent="register_container/line_edit_container"]
-margin_top = 126.0
-margin_right = 88.0
-margin_bottom = 169.0
+margin_top = 133.0
+margin_right = 100.0
+margin_bottom = 181.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 7 )
@@ -254,9 +251,9 @@ __meta__ = {
 }
 
 [node name="register_email" type="LineEdit" parent="register_container/line_edit_container"]
-margin_top = 188.0
+margin_top = 200.0
 margin_right = 495.0
-margin_bottom = 233.0
+margin_bottom = 247.0
 custom_styles/read_only = SubResource( 8 )
 custom_styles/focus = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
@@ -271,9 +268,9 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="register_password_label" type="Label" parent="register_container/line_edit_container"]
-margin_top = 252.0
-margin_right = 161.0
-margin_bottom = 295.0
+margin_top = 266.0
+margin_right = 180.0
+margin_bottom = 314.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 7 )
@@ -286,9 +283,9 @@ __meta__ = {
 }
 
 [node name="register_password" type="LineEdit" parent="register_container/line_edit_container"]
-margin_top = 314.0
+margin_top = 333.0
 margin_right = 495.0
-margin_bottom = 359.0
+margin_bottom = 380.0
 custom_styles/read_only = SubResource( 8 )
 custom_styles/focus = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
@@ -304,16 +301,16 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="register_button_container" type="MarginContainer" parent="register_container"]
-margin_top = 471.0
+margin_top = 482.0
 margin_right = 495.0
-margin_bottom = 613.0
+margin_bottom = 638.0
 custom_constants/margin_top = 95
 
 [node name="button" type="Button" parent="register_container/register_button_container"]
-margin_left = 123.0
+margin_left = 84.0
 margin_top = 95.0
-margin_right = 372.0
-margin_bottom = 142.0
+margin_right = 410.0
+margin_bottom = 156.0
 focus_mode = 0
 size_flags_horizontal = 4
 custom_styles/hover = SubResource( 6 )
@@ -437,10 +434,10 @@ margin_bottom = 604.0
 custom_constants/margin_top = 95
 
 [node name="button" type="Button" parent="login_container/login_button_container"]
-margin_left = 134.0
+margin_left = 91.0
 margin_top = 95.0
-margin_right = 409.0
-margin_bottom = 142.0
+margin_right = 451.0
+margin_bottom = 156.0
 focus_mode = 0
 size_flags_horizontal = 4
 custom_styles/hover = SubResource( 6 )
