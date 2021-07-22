@@ -174,7 +174,7 @@ __meta__ = {
 [node name="line_edit_container" type="VBoxContainer" parent="register_container"]
 margin_top = 55.0
 margin_right = 624.0
-margin_bottom = 435.0
+margin_bottom = 477.0
 custom_constants/separation = 19
 
 [node name="register_username_label" type="Label" parent="register_container/line_edit_container"]
@@ -194,7 +194,7 @@ __meta__ = {
 [node name="register_username" type="LineEdit" parent="register_container/line_edit_container"]
 margin_top = 67.0
 margin_right = 624.0
-margin_bottom = 114.0
+margin_bottom = 128.0
 custom_styles/read_only = SubResource( 6 )
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 6 )
@@ -209,9 +209,9 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="register_email_label" type="Label" parent="register_container/line_edit_container"]
-margin_top = 133.0
+margin_top = 147.0
 margin_right = 100.0
-margin_bottom = 181.0
+margin_bottom = 195.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 5 )
@@ -224,9 +224,9 @@ __meta__ = {
 }
 
 [node name="register_email" type="LineEdit" parent="register_container/line_edit_container"]
-margin_top = 200.0
+margin_top = 214.0
 margin_right = 624.0
-margin_bottom = 247.0
+margin_bottom = 275.0
 custom_styles/read_only = SubResource( 6 )
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 6 )
@@ -241,9 +241,9 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="register_password_label" type="Label" parent="register_container/line_edit_container"]
-margin_top = 266.0
+margin_top = 294.0
 margin_right = 180.0
-margin_bottom = 314.0
+margin_bottom = 342.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 5 )
@@ -256,9 +256,9 @@ __meta__ = {
 }
 
 [node name="register_password" type="LineEdit" parent="register_container/line_edit_container"]
-margin_top = 333.0
+margin_top = 361.0
 margin_right = 624.0
-margin_bottom = 380.0
+margin_bottom = 422.0
 custom_styles/read_only = SubResource( 6 )
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 6 )
@@ -274,9 +274,9 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="register_button_container" type="MarginContainer" parent="register_container"]
-margin_top = 447.0
+margin_top = 489.0
 margin_right = 624.0
-margin_bottom = 680.0
+margin_bottom = 722.0
 custom_constants/margin_top = 95
 
 [node name="button" type="Button" parent="register_container/register_button_container"]
