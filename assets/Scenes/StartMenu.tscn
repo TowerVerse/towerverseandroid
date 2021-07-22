@@ -90,7 +90,7 @@ expand_margin_top = 18.0
 expand_margin_bottom = 18.0
 
 [sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.576471, 0.352941, 0.952941, 1 )
+bg_color = Color( 0.317647, 0.0823529, 0.717647, 1 )
 
 [sub_resource type="DynamicFontData" id=14]
 font_path = "res://assets/Fonts/Roboto-Regular.ttf"
@@ -108,13 +108,13 @@ size = 36
 use_filter = true
 font_data = SubResource( 16 )
 
-[sub_resource type="DynamicFontData" id=22]
+[sub_resource type="DynamicFontData" id=18]
 font_path = "res://assets/Fonts/Roboto-Medium.ttf"
 
-[sub_resource type="DynamicFont" id=23]
+[sub_resource type="DynamicFont" id=19]
 size = 48
 use_filter = true
-font_data = SubResource( 22 )
+font_data = SubResource( 18 )
 
 [sub_resource type="DynamicFontData" id=20]
 font_path = "res://assets/Fonts/Roboto-Regular.ttf"
@@ -318,7 +318,7 @@ margin_left = 57.0
 margin_right = 165.0
 margin_bottom = 57.0
 size_flags_horizontal = 4
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 19 )
 custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
 text = "1045"
 

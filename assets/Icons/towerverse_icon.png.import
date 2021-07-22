@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/towerverse_icon.png-41bed85274a1e21b26efba4338a8fa64.stex"
+path="res://.import/towerverse_icon.png-2326e740d84776eabb541b476c515058.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/towerverse_icon.png"
-dest_files=[ "res://.import/towerverse_icon.png-41bed85274a1e21b26efba4338a8fa64.stex" ]
+source_file="res://assets/Icons/towerverse_icon.png"
+dest_files=[ "res://.import/towerverse_icon.png-2326e740d84776eabb541b476c515058.stex" ]
 
 [params]
 
