@@ -1,29 +1,29 @@
 extends Control
 
-onready var tween = get_node('tween')
-onready var account_scene = get_node('.')
+onready var tween = $tween
+onready var account_scene = $'.'
 
-onready var account_buttons_container = get_node('account_buttons_container')
-onready var acc_register_button = get_node('account_buttons_container/acc_register_button')
-onready var acc_login_button = get_node('account_buttons_container/acc_login_button')
+onready var account_buttons_container = $account_buttons_container
+onready var acc_register_button = $account_buttons_container/acc_register_button
+onready var acc_login_button = $account_buttons_container/acc_login_button
 
-onready var register_container = get_node('register_container')
-onready var register_error_label = get_node('register_container/register_error_label')
-onready var register_username = get_node("register_container/line_edit_container/register_username")
-onready var register_email = get_node("register_container/line_edit_container/register_email")
-onready var register_password = get_node("register_container/line_edit_container/register_password")
-onready var register_button = get_node('register_container/register_button_container/button')
+onready var register_container =  $register_container
+onready var register_error_label = $register_container/register_error_label
+onready var register_username = $register_container/register_boxes_container/register_username
+onready var register_email = $register_container/register_boxes_container/register_email
+onready var register_password = $register_container/register_boxes_container/register_password
+onready var register_button = $account_buttons_container/acc_register_button
 
-onready var login_container = get_node('login_container')
-onready var login_error_label = get_node("login_container/login_error_container/label")
-onready var login_email = get_node("login_container/line_edi_container/login_email")
-onready var login_password = get_node("login_container/line_edi_container/login_password")
-onready var login_button = get_node("login_container/login_button_container/button")
+onready var login_container = $login_container
+onready var login_error_label = $login_container/login_error_label
+onready var login_email = $login_container/login_boxes_container/login_email
+onready var login_password = $login_container/login_boxes_container/login_password
+onready var login_button = $login_container/login_button_container/login_button
 
-onready var verification_container = get_node('verification_container')
-onready var verification_error_label = get_node('verification_container/verification_error_label')
-onready var verification_code = get_node("verification_container/line_edit_container/verification_code")
-onready var verification_button = get_node("verification_container/verification_button_container/button")
+onready var verification_container = $verification_container
+onready var verification_error_label = $verification_container/verification_error_label
+onready var verification_code = $verification_container/line_edit_container/verification_code
+onready var verification_button = $verification_container/verification_button_container/verification_button
 
 var has_selected: bool = false
 var is_register: bool = false
@@ -44,9 +44,8 @@ func _ready() -> void:
 	login_container.visible = false
 	login_error_label.visible = false
 
-# PC testing, no effect on mobile
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed('ui_back'):
+	if event.is_action_released('ui_back'):
 		if tween.is_active() || is_verification || is_handling:
 			return
 			
@@ -317,8 +316,11 @@ func _on_login_button_pressed() -> void:
 	
 	match result_response['event']:
 		'loginTravellerReply':
-			Utils.save_credentials(email, password)
-			get_tree().change_scene("res://assets/Scenes/OnlineMenu.tscn")
+			Socket.send_packet('currentGuild')
+			
+			Utils.save_credentials(email, password, yield(Socket, 'packet_fetched')['event'].ends_with('Reply'))
+			
+			Utils.add_loading_info_and_redirect(['guilds'], 'res://assets/Scenes/OnlineMenu.tscn')
 		_:
 			show_response_error(result_response)
 
@@ -348,8 +350,9 @@ func _on_verification_button_pressed():
 	
 	match result_response['event']:
 		'verifyTravellerReply':
-			Utils.save_credentials(email, password)
-			get_tree().change_scene("res://assets/Scenes/OnlineMenu.tscn")
+			Utils.save_credentials(email, password, false)
+			
+			Utils.add_loading_info_and_redirect(['login'], 'res://assets/Scenes/OnlineMenu.tscn')
 		_:
 			show_response_error(result_response)
 
@@ -358,30 +361,75 @@ func _on_verification_button_pressed():
 
 func _on_register_username_text_changed(new_text):
 	var prev_caret_pos = register_username.caret_position
-	register_username.text = Utils.find_not_in_and_remove(new_text, Variables.username_characters)
+	
+	if len(new_text) > Variables.max_username_length:
+		register_username.text = new_text.substr(0, Variables.max_username_length)
+
+	else:
+		register_username.text = Utils.find_not_in_and_remove(new_text, Variables.username_characters)
+	
 	register_username.caret_position = prev_caret_pos
+
+func _on_register_username_text_entered(new_text):
+	register_email.grab_focus()
 
 func _on_register_email_text_changed(new_text):
 	var prev_caret_pos = register_email.caret_position
-	register_email.text = Utils.find_not_in_and_remove(new_text, Variables.email_characters)
+	
+	if len(new_text) > Variables.max_email_length:
+		register_email.text = new_text.substr(0, Variables.max_email_length)
+	
+	else:
+		register_email.text = Utils.find_not_in_and_remove(new_text, Variables.email_characters)
+		
 	register_email.caret_position = prev_caret_pos
+
+func _on_register_email_text_entered(new_text):
+	register_password.grab_focus()
 
 func _on_register_password_text_changed(new_text):
 	var prev_caret_pos = register_password.caret_position
-	register_password.text = Utils.find_not_in_and_remove(new_text, Variables.password_characters)
+	
+	if len(new_text) > Variables.max_password_length:
+		register_password.text = new_text.substr(0, Variables.max_password_length)
+	
+	else:
+		register_password.text = Utils.find_not_in_and_remove(new_text, Variables.password_characters)
+		
 	register_password.caret_position = prev_caret_pos
 
 func _on_login_email_text_changed(new_text):
 	var prev_caret_pos = login_email.caret_position
-	login_email.text = Utils.find_not_in_and_remove(new_text, Variables.email_characters)
+	
+	if len(new_text) > Variables.max_email_length:
+		login_email.text = new_text.substr(0, Variables.max_email_length)
+	
+	else:
+		login_email.text = Utils.find_not_in_and_remove(new_text, Variables.email_characters)
+	
 	login_email.caret_position = prev_caret_pos
+
+func _on_login_email_text_entered(new_text):
+	login_password.grab_focus()
 
 func _on_login_password_text_changed(new_text):
 	var prev_caret_pos = login_password.caret_position
-	login_password.text = Utils.find_not_in_and_remove(new_text, Variables.password_characters)
+	
+	if len(new_text) > Variables.max_password_length:
+		login_password.text = new_text.substr(0, Variables.max_password_length)
+	
+	else:
+		login_password.text = Utils.find_not_in_and_remove(new_text, Variables.password_characters)
+	
 	login_password.caret_position = prev_caret_pos
 
 func _on_verification_code_text_changed(new_text):
 	var prev_caret_pos = verification_code.caret_position
-	verification_code.text = Utils.find_not_in_and_remove(new_text, Variables.digits)
+	
+	if len(new_text) > Variables.max_verification_code_length:
+		verification_code.text = new_text.substr(0, Variables.max_verification_code_length)
+	
+	else:
+		verification_code.text = Utils.find_not_in_and_remove(new_text, Variables.digits)
+	
 	verification_code.caret_position = prev_caret_pos

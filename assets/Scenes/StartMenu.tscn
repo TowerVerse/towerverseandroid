@@ -1,130 +1,267 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/Icons/towerverse_icon.png" type="Texture" id=1]
-[ext_resource path="res://assets/Themes/buttons/play_button.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/Fonts/Roboto-Medium.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/Scripts/StartMenu.gd" type="Script" id=3]
-[ext_resource path="res://assets/Themes/buttons/about_button.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/Themes/buttons/about_button_pressed.tres" type="StyleBox" id=5]
-[ext_resource path="res://assets/Themes/buttons/play_button_pressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=9]
 
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0 )
-colors = PoolColorArray( 0.109804, 0.12549, 0.105882, 1 )
+[sub_resource type="DynamicFont" id=1]
+size = 90
+use_filter = true
+font_data = ExtResource( 9 )
 
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.317647, 0.0823529, 0.717647, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.576471, 0.352941, 0.952941, 1 )
+border_blend = true
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+corner_detail = 10
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = SubResource( 2 )
-region_rect = Rect2( 0, 0, 2048, 1 )
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.317647, 0.0823529, 0.717647, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.898039, 0.862745, 0.956863, 1 )
+border_blend = true
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+corner_detail = 10
 
 [sub_resource type="DynamicFontData" id=4]
-font_path = "res://assets/Fonts/Roboto-Bold.ttf"
+font_path = "res://assets/Fonts/Roboto-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=5]
-size = 96
+size = 80
 use_filter = true
 font_data = SubResource( 4 )
 
-[sub_resource type="DynamicFontData" id=6]
-font_path = "res://assets/Fonts/Roboto-Light.ttf"
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
 
-[sub_resource type="DynamicFont" id=7]
-size = 48
-use_filter = true
-font_data = SubResource( 6 )
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
 
-[sub_resource type="DynamicFontData" id=8]
-font_path = "res://assets/Fonts/Roboto-Regular.ttf"
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
 
-[sub_resource type="DynamicFont" id=9]
-size = 96
-use_filter = true
-font_data = SubResource( 8 )
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
 
 [sub_resource type="StyleBoxFlat" id=10]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=11]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=12]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=13]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.317647, 0.0823529, 0.717647, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
 
-[sub_resource type="DynamicFontData" id=11]
-font_path = "res://assets/Fonts/Roboto-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=12]
-size = 36
+[sub_resource type="DynamicFont" id=15]
+size = 40
 use_filter = true
-font_data = SubResource( 11 )
+font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFontData" id=13]
-font_path = "res://assets/Fonts/Roboto-Regular.ttf"
+[sub_resource type="StyleBoxEmpty" id=16]
 
-[sub_resource type="DynamicFont" id=14]
-size = 36
+[sub_resource type="DynamicFont" id=17]
+size = 40
 use_filter = true
-font_data = SubResource( 13 )
+font_data = ExtResource( 9 )
 
-[node name="StartMenu" type="MarginContainer"]
+[sub_resource type="DynamicFont" id=18]
+size = 30
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="StartMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_top = 150
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="startmenu_bg" type="Panel" parent="."]
-show_behind_parent = true
-margin_top = 150.0
-margin_right = 1080.0
-margin_bottom = 1920.0
-custom_styles/panel = SubResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="logo_container" type="VBoxContainer" parent="."]
-margin_left = 279.0
-margin_top = 150.0
-margin_right = 801.0
-margin_bottom = 489.0
-size_flags_horizontal = 4
-size_flags_vertical = 0
+[node name="top_container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+margin_top = 33.0
+margin_bottom = 283.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="towerverse_icon" type="TextureRect" parent="logo_container"]
-margin_right = 522.0
+[node name="towerverse_icon" type="TextureRect" parent="top_container"]
+margin_right = 1920.0
 margin_bottom = 128.0
 texture = ExtResource( 1 )
 stretch_mode = 4
 
-[node name="logo" type="Label" parent="logo_container"]
+[node name="towerverse_logo" type="Label" parent="top_container"]
+margin_left = 708.0
 margin_top = 148.0
-margin_right = 522.0
-margin_bottom = 262.0
+margin_right = 1211.0
+margin_bottom = 250.0
 size_flags_horizontal = 4
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.564706, 0.886275, 0.596078, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.443137, 0.00392157, 0.92549, 1 )
 text = "TowerVerse"
 
-[node name="version" type="Label" parent="logo_container"]
-margin_left = 202.0
-margin_top = 282.0
-margin_right = 320.0
-margin_bottom = 339.0
-size_flags_horizontal = 4
-custom_fonts/font = SubResource( 7 )
-custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
-text = "0.2a1"
-
 [node name="button_container" type="VBoxContainer" parent="."]
-margin_left = 314.0
-margin_top = 780.0
-margin_right = 766.0
-margin_bottom = 1290.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -183.5
+margin_right = 960.0
+margin_bottom = 269.5
+size_flags_horizontal = 3
 custom_constants/separation = 30
 alignment = 1
 __meta__ = {
@@ -132,116 +269,124 @@ __meta__ = {
 }
 
 [node name="play_button" type="Button" parent="button_container"]
-margin_right = 452.0
-margin_bottom = 150.0
+margin_left = 824.0
+margin_right = 1095.0
+margin_bottom = 131.0
 focus_mode = 0
-size_flags_horizontal = 5
-custom_styles/hover = ExtResource( 2 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/disabled = ExtResource( 2 )
-custom_styles/normal = ExtResource( 2 )
-custom_fonts/font = SubResource( 9 )
-custom_colors/font_color_disabled = Color( 0.898039, 0.862745, 0.956863, 1 )
-custom_colors/font_color = Color( 0.898039, 0.862745, 0.956863, 1 )
-custom_colors/font_color_hover = Color( 0.898039, 0.862745, 0.956863, 1 )
-custom_colors/font_color_pressed = Color( 0.898039, 0.862745, 0.956863, 1 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="options_button" type="Button" parent="button_container"]
-margin_top = 180.0
-margin_right = 452.0
-margin_bottom = 330.0
+margin_left = 762.0
+margin_top = 161.0
+margin_right = 1158.0
+margin_bottom = 292.0
 focus_mode = 0
-size_flags_horizontal = 5
-custom_styles/hover = ExtResource( 4 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 4 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = SubResource( 9 )
-custom_colors/font_color_disabled = Color( 0.988235, 0.839216, 0.839216, 1 )
-custom_colors/font_color = Color( 0.988235, 0.839216, 0.839216, 1 )
-custom_colors/font_color_hover = Color( 0.988235, 0.839216, 0.839216, 1 )
-custom_colors/font_color_pressed = Color( 0.988235, 0.839216, 0.839216, 1 )
+size_flags_horizontal = 4
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 5 )
 text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="about_button" type="Button" parent="button_container"]
-margin_top = 360.0
-margin_right = 452.0
-margin_bottom = 510.0
+margin_left = 793.0
+margin_top = 322.0
+margin_right = 1126.0
+margin_bottom = 453.0
 focus_mode = 0
-size_flags_horizontal = 5
-custom_styles/hover = ExtResource( 4 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 4 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = SubResource( 9 )
-custom_colors/font_color_disabled = Color( 0.929412, 0.929412, 0.929412, 1 )
-custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
-custom_colors/font_color_hover = Color( 0.929412, 0.929412, 0.929412, 1 )
-custom_colors/font_color_pressed = Color( 0.929412, 0.929412, 0.929412, 1 )
+size_flags_horizontal = 4
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 5 )
 text = "About"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="bottom_container" type="PanelContainer" parent="."]
-margin_top = 1804.0
-margin_right = 1080.0
-margin_bottom = 1920.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -80.0
 size_flags_vertical = 10
-custom_styles/panel = SubResource( 10 )
+custom_styles/panel = SubResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="margin_container" type="MarginContainer" parent="bottom_container"]
-margin_right = 1080.0
-margin_bottom = 116.0
-custom_constants/margin_right = 15
-custom_constants/margin_top = 15
-custom_constants/margin_left = 15
-custom_constants/margin_bottom = 15
-
-[node name="h_box_container" type="HBoxContainer" parent="bottom_container/margin_container"]
-margin_left = 309.0
-margin_top = 15.0
-margin_right = 771.0
-margin_bottom = 101.0
+[node name="gameinfo_need_account_label" type="Label" parent="bottom_container"]
+visible = false
+margin_left = 494.0
+margin_top = 37.0
+margin_right = 1426.0
+margin_bottom = 83.0
 size_flags_horizontal = 4
+custom_fonts/font = SubResource( 15 )
+text = "Login to an account to see game-related info here!
+"
+align = 1
+valign = 1
+max_lines_visible = 1
 
-[node name="update_container" type="VBoxContainer" parent="bottom_container/margin_container/h_box_container"]
-margin_right = 462.0
-margin_bottom = 86.0
-size_flags_horizontal = 0
+[node name="gameinfo_expand_button" type="Button" parent="bottom_container"]
+margin_left = 742.0
+margin_top = 11.0
+margin_right = 1177.0
+margin_bottom = 69.0
+size_flags_horizontal = 4
 size_flags_vertical = 4
-custom_constants/separation = 0
+custom_styles/focus = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+custom_colors/font_color = Color( 0.87451, 0.858824, 0.584314, 1 )
+text = "Show latest game info"
+flat = true
 
-[node name="label" type="Label" parent="bottom_container/margin_container/h_box_container/update_container"]
-margin_right = 462.0
-margin_bottom = 43.0
-custom_fonts/font = SubResource( 12 )
-custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
-text = "Update 1.01: New Levels and"
+[node name="gameinfo_scrollbar" type="ScrollContainer" parent="bottom_container"]
+visible = false
+margin_right = 1920.0
+margin_bottom = 120.0
+follow_focus = true
+scroll_horizontal_enabled = false
 
-[node name="link" type="LinkButton" parent="bottom_container/margin_container/h_box_container/update_container"]
-margin_left = 189.0
-margin_top = 43.0
-margin_right = 273.0
-margin_bottom = 86.0
-size_flags_horizontal = 4
-custom_fonts/font = SubResource( 14 )
-custom_colors/font_color = Color( 1, 0.956863, 0.580392, 1 )
-custom_colors/font_color_hover = Color( 1, 0.956863, 0.580392, 1 )
-custom_colors/font_color_pressed = Color( 1, 0.956863, 0.580392, 1 )
-enabled_focus_mode = 0
-text = "more"
+[node name="gameinfo_label" type="Label" parent="bottom_container/gameinfo_scrollbar"]
+margin_left = 871.0
+margin_right = 1049.0
+margin_bottom = 456.0
+size_flags_horizontal = 6
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 18 )
+text = "Update 0.2a1
+
+
+
+
+
+
+
+
+
+hello "
+align = 1
 
 [node name="tween" type="Tween" parent="."]
 
+[node name="tween_2" type="Tween" parent="."]
+
 [connection signal="pressed" from="button_container/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="bottom_container/gameinfo_expand_button" to="." method="_on_patchnotes_expand_button_pressed"]

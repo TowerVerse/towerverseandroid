@@ -1,12 +1,16 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://assets/Fonts/onlinemenu_top_info.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/Icons/guild_icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/Fonts/Roboto-Medium.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/Scripts/OnlineMenu.gd" type="Script" id=5]
+[ext_resource path="res://assets/Fonts/Ubuntu-Medium.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/Fonts/lineedit_font.tres" type="DynamicFont" id=7]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0 )
-colors = PoolColorArray( 0.0117647, 0.203922, 0.172549, 1 )
+colors = PoolColorArray( 0.133333, 0.105882, 0.184314, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
@@ -15,23 +19,393 @@ gradient = SubResource( 1 )
 texture = SubResource( 2 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
-[sub_resource type="Gradient" id=4]
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 50.0
+content_margin_right = 50.0
+bg_color = Color( 0.360784, 0.152941, 0.733333, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_color = Color( 0.133333, 0.105882, 0.184314, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 50.0
+content_margin_right = 50.0
+bg_color = Color( 0.247059, 0.184314, 0.360784, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_color = Color( 0.133333, 0.105882, 0.184314, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.360784, 0.152941, 0.733333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 35
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=11]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.109804, 0.12549, 0.105882, 0 )
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=12]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=13]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="DynamicFont" id=14]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.282353, 0.12549, 0.576471, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=16]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.215686, 0.12549, 0.380392, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=17]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.282353, 0.12549, 0.576471, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=18]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+bg_color = Color( 0.282353, 0.12549, 0.576471, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="DynamicFont" id=19]
+size = 50
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.227451, 0.152941, 0.368627, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color( 0.333333, 0.0117647, 0.929412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.447059, 0.345098, 0.639216, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.607843, 0.447059, 0.905882, 1 )
+border_blend = true
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=22]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=42]
+size = 18
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=41]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.447059, 0.345098, 0.639216, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 1, 1, 1, 1 )
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=43]
+size = 18
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+
+[sub_resource type="StyleBoxFlat" id=25]
+
+[sub_resource type="StyleBoxFlat" id=26]
+
+[sub_resource type="StyleBoxFlat" id=27]
+
+[sub_resource type="StyleBoxFlat" id=28]
+
+[sub_resource type="Gradient" id=29]
+
+[sub_resource type="GradientTexture" id=30]
+gradient = SubResource( 29 )
+
+[sub_resource type="StyleBoxFlat" id=31]
+
+[sub_resource type="StyleBoxLine" id=32]
+
+[sub_resource type="StyleBoxFlat" id=33]
+bg_color = Color( 0.764706, 0.0705882, 0.0705882, 1 )
+
+[sub_resource type="Theme" id=34]
+TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
+TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
+TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
+TextEdit/colors/breakpoint_color = Color( 0.8, 0.8, 0.4, 0.2 )
+TextEdit/colors/caret_background_color = Color( 0, 0, 0, 1 )
+TextEdit/colors/caret_color = Color( 0.88, 0.88, 0.88, 1 )
+TextEdit/colors/code_folding_color = Color( 0.8, 0.8, 0.8, 0.8 )
+TextEdit/colors/completion_background_color = Color( 0.17, 0.16, 0.2, 1 )
+TextEdit/colors/completion_existing_color = Color( 0.87, 0.87, 0.87, 0.13 )
+TextEdit/colors/completion_font_color = Color( 0.67, 0.67, 0.67, 1 )
+TextEdit/colors/completion_scroll_color = Color( 1, 1, 1, 1 )
+TextEdit/colors/completion_selected_color = Color( 0.26, 0.26, 0.27, 1 )
+TextEdit/colors/current_line_color = Color( 0.25, 0.25, 0.26, 0.8 )
+TextEdit/colors/executing_line_color = Color( 0.2, 0.8, 0.2, 0.4 )
+TextEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+TextEdit/colors/font_color_readonly = Color( 0.88, 0.88, 0.88, 0.5 )
+TextEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+TextEdit/colors/function_color = Color( 0.4, 0.64, 0.81, 1 )
+TextEdit/colors/line_number_color = Color( 0.67, 0.67, 0.67, 0.4 )
+TextEdit/colors/mark_color = Color( 1, 0.4, 0.4, 0.4 )
+TextEdit/colors/member_variable_color = Color( 0.9, 0.31, 0.35, 1 )
+TextEdit/colors/number_color = Color( 0.92, 0.58, 0.2, 1 )
+TextEdit/colors/safe_line_number_color = Color( 0.67, 0.78, 0.67, 0.6 )
+TextEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+TextEdit/colors/symbol_color = Color( 0.94, 0.94, 0.94, 1 )
+TextEdit/colors/word_highlighted_color = Color( 0.8, 0.9, 0.9, 0.15 )
+TextEdit/constants/completion_lines = 7
+TextEdit/constants/completion_max_width = 50
+TextEdit/constants/completion_scroll_width = 3
+TextEdit/constants/line_spacing = 8
+TextEdit/fonts/font = null
+TextEdit/icons/fold = null
+TextEdit/icons/folded = null
+TextEdit/icons/space = null
+TextEdit/icons/tab = null
+TextEdit/styles/completion = null
+TextEdit/styles/focus = null
+TextEdit/styles/normal = null
+TextEdit/styles/read_only = null
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 24 )
+VScrollBar/styles/grabber_highlight = SubResource( 25 )
+VScrollBar/styles/grabber_pressed = SubResource( 26 )
+VScrollBar/styles/scroll = SubResource( 27 )
+VScrollBar/styles/scroll_focus = SubResource( 28 )
+VSlider/icons/grabber = SubResource( 30 )
+VSlider/icons/grabber_disabled = null
+VSlider/icons/grabber_highlight = null
+VSlider/icons/tick = null
+VSlider/styles/grabber_area = SubResource( 31 )
+VSlider/styles/grabber_area_highlight = SubResource( 32 )
+VSlider/styles/slider = SubResource( 33 )
+
+[sub_resource type="StyleBoxFlat" id=35]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.109804, 0.12549, 0.105882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.352941, 0.109804, 0.768627, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[sub_resource type="DynamicFont" id=36]
+size = 30
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=37]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.227451, 0.152941, 0.368627, 1 )
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.333333, 0.0117647, 0.929412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 0.231373, 0.0980392, 0.47451, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.376471, 0, 1, 1 )
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Gradient" id=39]
 offsets = PoolRealArray( 1 )
-colors = PoolColorArray( 0.0431373, 0.403922, 0.34902, 1 )
+colors = PoolColorArray( 0.317647, 0.0823529, 0.717647, 1 )
 
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 4 )
-
-[sub_resource type="StyleBoxTexture" id=6]
-texture = SubResource( 5 )
-region_rect = Rect2( 0, 0, 2048, 1 )
-
-[sub_resource type="Gradient" id=7]
-offsets = PoolRealArray( 1 )
-colors = PoolColorArray( 0, 0.717647, 0.607843, 1 )
-
-[sub_resource type="GradientTexture" id=8]
-gradient = SubResource( 7 )
+[sub_resource type="GradientTexture" id=40]
+gradient = SubResource( 39 )
 width = 120
 
 [node name="OnlineMenu" type="Control"]
@@ -54,76 +428,435 @@ __meta__ = {
 [node name="towers_container" type="VBoxContainer" parent="."]
 visible = false
 anchor_right = 1.0
-margin_bottom = 1370.0
+margin_bottom = 850.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="towers_label" type="Label" parent="towers_container"]
-margin_right = 1080.0
+margin_right = 1920.0
 margin_bottom = 91.0
 custom_fonts/font = ExtResource( 1 )
-text = "TowerVerse"
+text = "Open Towers"
 align = 1
 valign = 1
 
 [node name="guilds_container" type="VBoxContainer" parent="."]
 anchor_right = 1.0
-margin_top = 71.0
-margin_bottom = 1371.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_bottom = 850.0
 size_flags_stretch_ratio = 2.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="guilds_label" type="Label" parent="guilds_container"]
-margin_left = 423.0
-margin_right = 656.0
+margin_left = 657.0
+margin_right = 1262.0
 margin_bottom = 91.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 1 )
-text = "Guilds"
+text = "Loading guilds..."
 align = 1
 valign = 1
 
-[node name="bottom_container" type="PanelContainer" parent="."]
-anchor_top = 1.0
+[node name="guild_create_margin" type="MarginContainer" parent="guilds_container"]
+visible = false
+margin_top = 99.0
+margin_right = 1920.0
+margin_bottom = 749.0
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 10
+
+[node name="guild_create_list" type="TabContainer" parent="guilds_container/guild_create_margin"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 1900.0
+margin_bottom = 640.0
+custom_styles/tab_fg = SubResource( 4 )
+custom_styles/tab_bg = SubResource( 5 )
+custom_styles/panel = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+
+[node name="guild_create_template" type="MarginContainer" parent="guilds_container/guild_create_margin/guild_create_list"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -149.0
-custom_styles/panel = SubResource( 6 )
+margin_left = 2.0
+margin_top = 58.0
+margin_right = -2.0
+margin_bottom = -2.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="guild_create_template_vbox" type="VBoxContainer" parent="guilds_container/guild_create_margin/guild_create_list/guild_create_template"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 1856.0
+margin_bottom = 550.0
+custom_constants/separation = 0
+
+[node name="guild_create_upper_margin" type="MarginContainer" parent="guilds_container/guild_create_margin/guild_create_list/guild_create_template/guild_create_template_vbox"]
+margin_right = 1836.0
+margin_bottom = 104.0
+custom_constants/margin_bottom = 10
+
+[node name="guild_create_upper_vbox" type="VBoxContainer" parent="guilds_container/guild_create_margin/guild_create_list/guild_create_template/guild_create_template_vbox/guild_create_upper_margin"]
+margin_right = 1836.0
+margin_bottom = 94.0
+
+[node name="guild_create_description" type="Label" parent="guilds_container/guild_create_margin/guild_create_list/guild_create_template/guild_create_template_vbox/guild_create_upper_margin/guild_create_upper_vbox"]
+margin_right = 1836.0
+margin_bottom = 46.0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 8 )
+text = "Guild Description"
+align = 1
+max_lines_visible = 2
+
+[node name="guild_create_max_members" type="Label" parent="guilds_container/guild_create_margin/guild_create_list/guild_create_template/guild_create_template_vbox/guild_create_upper_margin/guild_create_upper_vbox"]
+margin_top = 54.0
+margin_right = 224.0
+margin_bottom = 94.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 9 )
+text = "Members: 1/2"
+align = 1
+max_lines_visible = 2
+
+[node name="guild_create_members" type="HBoxContainer" parent="guilds_container/guild_create_margin/guild_create_list/guild_create_template/guild_create_template_vbox"]
+margin_top = 104.0
+margin_right = 306.0
+margin_bottom = 176.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="guild_create_member" type="Button" parent="guilds_container/guild_create_margin/guild_create_list/guild_create_template/guild_create_template_vbox/guild_create_members"]
+margin_right = 306.0
+margin_bottom = 72.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
+text = "guild member"
+
+[node name="guild_join_button" type="Button" parent="guilds_container/guild_create_margin/guild_create_list/guild_create_template/guild_create_template_vbox"]
+margin_left = 741.0
+margin_top = 447.0
+margin_right = 1094.0
+margin_bottom = 540.0
+size_flags_horizontal = 4
+size_flags_vertical = 10
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/font = SubResource( 19 )
+text = "Join Guild"
+
+[node name="guild_current_margin" type="MarginContainer" parent="guilds_container"]
+margin_top = 99.0
+margin_right = 1920.0
+margin_bottom = 842.0
+size_flags_vertical = 3
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+
+[node name="guild_current_vbox" type="VBoxContainer" parent="guilds_container/guild_current_margin"]
+margin_right = 1920.0
+margin_bottom = 743.0
+
+[node name="guild_current_description" type="Label" parent="guilds_container/guild_current_margin/guild_current_vbox"]
+margin_right = 1920.0
+margin_bottom = 46.0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 8 )
+text = "Guild Description"
+align = 1
+max_lines_visible = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="guild_current_grid" type="GridContainer" parent="guilds_container/guild_current_margin/guild_current_vbox"]
+margin_top = 54.0
+margin_right = 1920.0
+margin_bottom = 743.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 0
+columns = 2
+
+[node name="guild_current_chat_panel" type="PanelContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid"]
+margin_right = 1594.0
+margin_bottom = 689.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 20 )
+
+[node name="guild_current_chat_vbox" type="VBoxContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1584.0
+margin_bottom = 679.0
+
+[node name="guild_current_chat_boxes" type="VBoxContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox"]
+margin_right = 1574.0
+margin_bottom = 591.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+custom_constants/separation = 0
+
+[node name="guild_current_chat_template_panel" type="PanelContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes"]
+margin_right = 268.0
+margin_bottom = 74.0
+size_flags_horizontal = 0
+custom_styles/panel = SubResource( 21 )
+
+[node name="guild_current_chat_template" type="VBoxContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes/guild_current_chat_template_panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 258.0
+margin_bottom = 64.0
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="h_box_container" type="HBoxContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes/guild_current_chat_template_panel/guild_current_chat_template"]
+margin_right = 248.0
+margin_bottom = 24.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="label" type="Label" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes/guild_current_chat_template_panel/guild_current_chat_template/h_box_container"]
+margin_right = 112.0
+margin_bottom = 24.0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 22 )
+text = "Player name"
+
+[node name="label_2" type="Label" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes/guild_current_chat_template_panel/guild_current_chat_template/h_box_container"]
+margin_left = 122.0
+margin_right = 248.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0.490196, 0.356863, 0.670588, 1 )
+text = "message time"
+
+[node name="label" type="Label" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes/guild_current_chat_template_panel/guild_current_chat_template"]
+margin_top = 32.0
+margin_right = 248.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 42 )
+text = "message text"
+max_lines_visible = 3
+
+[node name="guild_current_chat_template_panel_2" type="PanelContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes"]
+margin_left = 1306.0
+margin_top = 74.0
+margin_right = 1574.0
+margin_bottom = 148.0
+size_flags_horizontal = 10
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 41 )
+
+[node name="guild_current_chat_template" type="VBoxContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes/guild_current_chat_template_panel_2"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 258.0
+margin_bottom = 64.0
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="h_box_container" type="HBoxContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes/guild_current_chat_template_panel_2/guild_current_chat_template"]
+margin_right = 248.0
+margin_bottom = 24.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="label" type="Label" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes/guild_current_chat_template_panel_2/guild_current_chat_template/h_box_container"]
+margin_right = 112.0
+margin_bottom = 24.0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 22 )
+text = "Player name"
+
+[node name="label_2" type="Label" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes/guild_current_chat_template_panel_2/guild_current_chat_template/h_box_container"]
+margin_left = 122.0
+margin_right = 248.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0.490196, 0.356863, 0.670588, 1 )
+text = "message time"
+
+[node name="label" type="Label" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_boxes/guild_current_chat_template_panel_2/guild_current_chat_template"]
+margin_top = 32.0
+margin_right = 248.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 43 )
+text = "message text"
+max_lines_visible = 3
+
+[node name="guild_current_chat_container" type="HBoxContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox"]
+margin_top = 599.0
+margin_right = 1574.0
+margin_bottom = 669.0
+size_flags_vertical = 10
+
+[node name="guild_chat_message" type="TextEdit" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_container"]
+margin_right = 1377.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+theme = SubResource( 34 )
+custom_styles/read_only = SubResource( 35 )
+custom_styles/focus = SubResource( 35 )
+custom_styles/normal = SubResource( 35 )
+custom_fonts/font = ExtResource( 7 )
+custom_colors/selection_color = Color( 0.184314, 0.211765, 0.176471, 1 )
+custom_colors/font_color_selected = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+text = "
+
+"
+highlight_all_occurrences = true
+context_menu_enabled = false
+smooth_scrolling = true
+wrap_enabled = true
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="guild_send_button" type="Button" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_container"]
+margin_left = 1385.0
+margin_right = 1574.0
+margin_bottom = 70.0
+size_flags_horizontal = 4
+size_flags_vertical = 10
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/font = SubResource( 36 )
+text = "Send"
+
+[node name="guild_current_members_container_2" type="PanelContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid"]
+margin_left = 1594.0
+margin_right = 1920.0
+margin_bottom = 689.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 37 )
+
+[node name="v_box_container" type="ScrollContainer" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_members_container_2"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 316.0
+margin_bottom = 679.0
+scroll_horizontal_enabled = false
+
+[node name="guild_create_member" type="Button" parent="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_members_container_2/v_box_container"]
+margin_right = 306.0
+margin_bottom = 72.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
+text = "guild member"
+
+[node name="guilds_bottom_container" type="HBoxContainer" parent="guilds_container"]
+margin_top = 850.0
+margin_right = 1920.0
+margin_bottom = 850.0
+alignment = 1
+
+[node name="guild_create_button" type="Button" parent="guilds_container/guilds_bottom_container"]
+visible = false
+margin_left = 554.0
+margin_right = 966.0
+margin_bottom = 93.0
+size_flags_vertical = 8
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/font = SubResource( 19 )
+text = "Create Guild"
+
+[node name="guild_leave_button" type="Button" parent="guilds_container/guilds_bottom_container"]
+visible = false
+margin_left = 764.0
+margin_right = 1156.0
+margin_bottom = 93.0
+size_flags_vertical = 8
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/font = SubResource( 19 )
+text = "Leave Guild"
+__meta__ = {
+"_editor_description_": "REMOVE THIS FOR A DIALOG VIEW GOD"
+}
+
+[node name="bottom_container" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -318.0
+margin_top = -179.0
+margin_right = 316.0
+margin_bottom = -33.0
+custom_styles/panel = SubResource( 38 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="bottom_pressed_texture" type="TextureRect" parent="bottom_container"]
-margin_left = 480.0
-margin_right = 600.0
-margin_bottom = 149.0
+margin_left = 257.0
+margin_top = 5.0
+margin_right = 377.0
+margin_bottom = 141.0
 size_flags_horizontal = 4
-texture = SubResource( 8 )
+texture = SubResource( 40 )
 stretch_mode = 1
 
 [node name="bottom_hbox_container" type="HBoxContainer" parent="bottom_container"]
-margin_right = 1080.0
-margin_bottom = 149.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 629.0
+margin_bottom = 141.0
 custom_constants/separation = 40
 alignment = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="bottom_guilds_button" type="TextureButton" parent="bottom_container/bottom_hbox_container"]
-margin_left = 480.0
-margin_top = 14.0
-margin_right = 600.0
-margin_bottom = 134.0
+margin_left = 252.0
+margin_top = 8.0
+margin_right = 372.0
+margin_bottom = 128.0
 size_flags_vertical = 4
 texture_normal = ExtResource( 2 )
 
 [node name="tween" type="Tween" parent="."]
 
+[node name="tween_2" type="Tween" parent="."]
+
+[connection signal="text_changed" from="guilds_container/guild_current_margin/guild_current_vbox/guild_current_grid/guild_current_chat_panel/guild_current_chat_vbox/guild_current_chat_container/guild_chat_message" to="." method="_on_guild_chat_message_text_changed"]
+[connection signal="pressed" from="guilds_container/guilds_bottom_container/guild_create_button" to="." method="_on_guilds_create_button_pressed"]
+[connection signal="pressed" from="guilds_container/guilds_bottom_container/guild_leave_button" to="." method="_on_guild_leave_button_pressed"]
 [connection signal="pressed" from="bottom_container/bottom_hbox_container/bottom_guilds_button" to="." method="_on_bottom_guilds_button_pressed"]

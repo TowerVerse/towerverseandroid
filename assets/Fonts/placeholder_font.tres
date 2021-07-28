@@ -1,9 +1,8 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[sub_resource type="DynamicFontData" id=1]
-font_path = "res://assets/Fonts/Roboto-Medium.ttf"
+[ext_resource path="res://assets/Fonts/Roboto-Medium.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 40
+size = 45
 use_filter = true
-font_data = SubResource( 1 )
+font_data = ExtResource( 1 )
