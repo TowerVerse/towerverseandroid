@@ -63,7 +63,7 @@ func send_packet(event: String, data: Dictionary = {}) -> void:
 		yield(self, 'fetch_added')
 	
 	emit_signal('packet_fetched', _fetched_packets[final_packet_ref])
-
+	
 	_fetched_packets.erase(final_packet_ref)
 
 func _send_wss_packet(packet: PoolByteArray) -> void:

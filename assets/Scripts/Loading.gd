@@ -1,10 +1,13 @@
 extends Control
 
-onready var tween = get_node('tween')
-onready var loading_scene = get_node('.')
+onready var loading_scene = $'.'
 
-onready var loading_label = get_node('loading_label')
-onready var loading_progress = get_node('loading_progress')
+onready var loading_label = $loading_label
+onready var loading_progress = $loading_progress
+
+var packet_succeeded: bool = false
+
+signal packet_finished
 
 func _ready() -> void:
 	Utils.log('Loading started.')
@@ -18,67 +21,65 @@ func start_progress():
 		get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
 		return
 	
-	process_packets()
+	process_loading_packets()
 
-func process_packets():
-	if len(Variables.loading_packets) == 0:
-		get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
+func process_loading_packets() -> void:
+	
+	if not Variables.target_loading_names:
+		Utils.log('No loading packet names passed to Loading, aborting.')
+		exit_loading()
 		return
-		
-	var event = ''
-	var final_packet = {}
-	var callback: FuncRef = null
-	var target_args = []
-		
-	var progress_to_add = 100.0 / len(Variables.loading_packets)
-		
-	for packet in Variables.loading_packets.values():
-		loading_label.text = packet['text']
-		
-		event = packet['event']
-		final_packet = {}
-		callback = null
-		target_args = packet['target_args']
-		
-		if 'callback' in packet:
-			callback = packet['callback']
-		
-		packet.erase('event')
-		packet.erase('text')
-		packet.erase('callback')
-		packet.erase('target_args')
-
-		for key in packet.keys():
-			final_packet[key] = packet[key]
-			
-		Socket.send_packet(event, final_packet)
-		
-		var match_case_reply = event + 'Reply'
-		
-		var result_response = yield(Socket, 'packet_fetched')
-		
-		match result_response['event']:
-			match_case_reply:
-				if callback:
-					callback.call_funcv(target_args)
-
-				loading_progress.value += progress_to_add
-			_:
-				Utils.log('Error calling ' + event + ': '+ str(result_response))
-				
-				Variables.loading_packets = {}
-				Variables.loading_redirect = ''
-				
-				get_tree().change_scene("res://assets/Scenes/StartMenu.tscn")
-				return
 	
-	loading_progress.value = 100
+	var progress_to_add = 100.0 / len(Variables.target_loading_names)
 	
-	loading_label.text = 'Finished.'
+	for packet in Variables.target_loading_names:
+		var target_func = funcref(self, packet)
+		
+		if not target_func.is_valid():
+			Utils.log('Invalid loading packet name provided to Loading, aborting.')
+			exit_loading()
+			return
+		
+		target_func.call_func()
+		
+		if not yield(self, 'packet_finished'):
+			exit_loading()
+			return
+		
+		loading_progress.value += progress_to_add
 	
-	var temp_redirect = Variables.loading_redirect
+	var temp_redirect = Variables.target_redirect
 	
-	Variables.loading_packets = {}
-	Variables.loading_redirect = ''
+	if not temp_redirect:
+		Utils.log('No loading redirect provided to Loading, aborting.')
+		exit_loading()
+		return
+	
+	cleanup_loading_variables()
 	
 	get_tree().change_scene(temp_redirect)
+
+func login() -> void:
+	loading_label.text = 'Logging in to TowerVerse servers...'
+	
+	Socket.send_packet('loginTraveller', {'travellerEmail': Save.get_value('travellerEmail'),
+										'travellerPassword': Save.get_value('travellerPassword')})
+													
+	emit_signal('packet_finished', Utils.is_event_reply(yield(Socket, 'packet_fetched')['event']))
+
+func guilds() -> void:
+	loading_label.text = 'Updating guilds...'
+	
+	Utils.update_guilds()
+	
+	yield(Utils, 'guilds_updated')
+	
+	emit_signal('packet_finished', true)
+
+func cleanup_loading_variables() -> void:
+	Variables.target_loading_names = []
+	Variables.target_redirect = ''
+
+func exit_loading() -> void:
+	cleanup_loading_variables()
+	get_tree().change_scene('res://assets/Scenes/StartMenu.tscn')

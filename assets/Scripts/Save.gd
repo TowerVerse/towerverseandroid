@@ -18,12 +18,13 @@ func check_file() -> void:
 		file.store_line(JSON.print({}))
 		file.close()
 
-func add_value(key: String, value, set: bool = false) -> void:
+func add_value(key: String, value) -> void:
 	check_file()
 	
 	var file_dict = get_file_dict()
 	
-	if key in file_dict.keys() and not set:
+	if key in file_dict.keys():
+		Utils.log('Can\'t add ' + key + ', it already exists in the save file, aborting.')
 		return
 
 	file.open_encrypted_with_pass(Variables.SAVE_FILENAME, File.WRITE, Variables.SAVE_PASSWORD)
@@ -36,12 +37,32 @@ func add_value(key: String, value, set: bool = false) -> void:
 	
 	file.close()
 
+func set_value(key: String, value) -> void:
+	check_file()
+	
+	var file_dict = get_file_dict()
+	
+	if not key in file_dict.keys():
+		Utils.log('Can\'t set ' + key + ', it doesn\'t exist in the save file, aborting.')
+		return
+		
+	file.open_encrypted_with_pass(Variables.SAVE_FILENAME, File.WRITE, Variables.SAVE_PASSWORD)
+	
+	file_dict[key] = value
+	
+	file.seek_end()
+	
+	file.store_line(JSON.print(file_dict))
+	
+	file.close()
+
 func remove_value(key: String) -> void:
 	check_file()
 	
 	var file_dict = get_file_dict()
 	
 	if not key in file_dict:
+		Utils.log('Can\'t remove ' + key + ', it doesn\'t exist in the save file, aborting.')
 		return
 
 	file.open_encrypted_with_pass(Variables.SAVE_FILENAME, File.WRITE, Variables.SAVE_PASSWORD)
@@ -57,9 +78,11 @@ func get_value(key: String):
 	
 	var values_dict = get_file_dict()
 
-	if key in values_dict:
-		return values_dict[key]
-	return null
+	if not key in values_dict:
+		Utils.log('Can\'t get ' + key + ', it doesn\'t exist in the save file, aborting.')
+		return null
+	
+	return values_dict[key]
 
 func get_file_dict() -> Dictionary:
 	check_file()
